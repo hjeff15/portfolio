@@ -1,3 +1,8 @@
+typed animation code hiked from the below link;
+https://css-tricks.com/snippets/css/typewriter-effect/
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

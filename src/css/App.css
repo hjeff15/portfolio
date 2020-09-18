@@ -1,0 +1,236 @@
+
+.Homepage-page-layout{
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Me-page-layout{
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+  background-color: #282c34;
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 40px;
+  grid-template-rows: 40px 1fr 40px;
+  grid-template-areas:
+    " . . . . "
+    " . text image . "
+    " . . . . ";
+  flex-direction: row;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* font-size: calc(10px + 2vmin); */
+  color: white;
+}
+img{
+  width: 400px;
+}
+.me-photo{
+  grid-area: image;
+}
+.me-text{
+  grid-area: text;
+}
+
+.type-writer{
+  color: white;
+  font-size: 30px;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid; /* The typwriter cursor */
+  border-color: transparent;
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto 4px; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  padding-bottom: 5px;
+  animation: 
+    typingLn1 1.5s steps(30, end),
+    blink-caret .75s step-end 2;
+}
+
+.me-type-writer{
+  color: white;
+  font-size: 30px;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid; /* The typwriter cursor */
+  border-color: transparent;
+  white-space: wrap; /* Keeps the content on a single line */
+  margin: 0 auto 4px; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  padding-bottom: 5px;
+  animation: 
+    typingLn1 1.5s steps(30, end),
+    blink-caret .75s step-end 2;
+}
+
+
+p.about-me{
+  font-size: 30px;
+  /* padding-top: 0px; */
+  /* padding-bottom: 0px; */
+  width: 0;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid; /* The typwriter cursor */
+  border-color: transparent;
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto 4px 100px; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  padding-bottom: 5px;
+  animation: 
+    typingLn2 1.5s steps(20, end),
+    blink-caret .75s step-end 3;
+    /* visibiltyLn2 1s fadeIn; */
+  animation-delay: 1.6s;
+  animation-fill-mode: forwards;
+}
+
+p.my-skills{
+  font-size: 30px;
+  /* padding-top: 0px; */
+  /* padding-bottom: 0px; */
+  width: 0;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid; /* The typwriter cursor */
+  border-color: transparent;
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto 4px 100px; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  padding-bottom: 5px;
+  animation: 
+    typingLn3 1.5s steps(15, end),
+    blink-caret .75s step-end 2;
+    /* visibiltyLn2 1s fadeIn; */
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+}
+
+p.my-projects{
+  font-size: 30px;
+  /* padding-top: 0px; */
+  /* padding-bottom: 0px; */
+  width: 0;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid; /* The typwriter cursor */
+  border-color: transparent;
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto 4px 100px; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  padding-bottom: 5px;
+  animation: 
+    typingLn4 1.5s steps(15, end),
+    blink-caret .75s step-end 2;
+    /* visibiltyLn2 1s fadeIn; */
+  animation-delay: 5.5s;
+  animation-fill-mode: forwards;
+}
+
+p.my-contact{
+  font-size: 30px;
+  /* padding-top: 0px; */
+  /* padding-bottom: 0px; */
+  width: 0;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid; /* The typwriter cursor */
+  border-color: transparent;
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto 4px 95px; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typingLn5 1.5s steps(15, end),
+    blink-caret .75s step-end 2;
+  animation-delay: 7s;
+  animation-fill-mode: forwards;
+}
+
+p.func-bracket{
+  font-size: 30px;
+  /* padding-top: 0px; */
+  /* padding-bottom: 0px; */
+  width: 0;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid; /* The typwriter cursor */
+  border-color: transparent;
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin-right: auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typingLn6 0.5s steps(2, end),
+    blink-caret .75s step-end infinite;
+    /* visibiltyLn2 1s fadeIn; */
+  animation-delay: 8.5s;
+  animation-fill-mode: forwards;
+}
+
+.branch:hover { 
+  cursor: pointer;
+  text-decoration: underline orange;
+}
+
+.function{
+  color: rgb(158, 114, 158);
+}
+
+.function-name{
+  color: rgb(57, 105, 187);
+}
+
+.brackets{
+  color: rgb(53, 138, 110);
+}
+
+.param{
+  color: orange;
+}
+
+.this{
+  color: red;
+}
+/* The typing effect */
+@keyframes typingLn1 {
+  from { width: 0 }
+  to { width:100% }
+}
+
+/* typing line 2 */
+@keyframes typingLn2 {
+  from { width: 0 }
+  to { width:50% }
+}
+
+/* typing line 3 */
+@keyframes typingLn3 {
+  from { width: 0 }
+  to { width:60% }
+}
+
+/* typing line 4 */
+@keyframes typingLn4 {
+  from { width: 0 }
+  to { width:70% }
+}
+
+/* typing line 5 */
+@keyframes typingLn5 {
+  from { width: 0 }
+  to { width:75% }
+}
+
+/* typing line 6 */
+@keyframes typingLn6 {
+  from { width: 0 }
+  to { width:10% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
