@@ -5,14 +5,24 @@ import '../css/App.css';
 
 
 class Projects extends React.Component{
+  state = {
+    visible: false
+  }
+
+  componentDidMount(){
+    this.setState({
+      visible: true
+    })
+  }
+
   render(){
     return (
-      <CSSTransition in={this.props.view} 
-        timeout={{enter: 4000}}
+      <CSSTransition in={this.state.visible} 
+        timeout={{enter: 1000}}
         classNames="projects"
         unmountOnExit
         >
-        <div className="Me-page-layout">
+        <div className="Projects-page-layout">
           <main>
             <p>
               These are my projects
