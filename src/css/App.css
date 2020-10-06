@@ -40,11 +40,11 @@ html{
   column-gap: 10px;
   /* overflow: hidden; */
   display: grid;
-  grid-template-columns: 1fr 1fr ;
-  grid-template-rows: 1fr 1fr ;
-  grid-template-areas:
-    "blurb image"
-    "button image";
+  grid-template-rows: 750px 1fr;
+  column-gap: 10px;
+  grid-template-areas: 
+    "main"
+    "buttons";
   color: white;
 }
 
@@ -54,7 +54,7 @@ html{
   /* column-gap: 10px; */
   color: white;
   display: grid;
-  grid-template-rows: 80% 100px;
+  grid-template-rows: 750px 1fr;
   grid-template-areas: 
     "main"
     "buttons";
@@ -118,6 +118,13 @@ p.me-type{
 button{
   align-items: center;
 }
+div.skills-buttons{
+  grid-area: buttons;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 15px 25px 15px;
+  margin: 5px 25px 35px 25px;
+}
 
 /* ======================================= */
 
@@ -179,6 +186,41 @@ img#css.skill-image{
 }
 
 /* ========================================= */
+
+/* ================= PROJECT CARDS ================== */
+.project-card{
+  border: 1px solid white;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  grid-template-rows: 80px 1fr;
+  grid-template-areas: 
+    "vid  header"
+    "vid description";
+}
+
+.project-videos{
+  width: 350px;
+  border-radius: 30px;
+  grid-area: vid;
+}
+#walkrunrideclimb{
+  height: 250px;
+}
+
+.project-header{
+  grid-area: header;
+}
+.project-description{
+  grid-area: description;
+}
+
+h2.project-header{
+  margin-left: 150px;
+  font-size: 1.7rem;
+}
 
 /* =================MENU PAGE STYLES =============== */
 p.about-me{
@@ -394,7 +436,7 @@ p.func-bracket{
   opacity: 0;
   transition: 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
+/* ================== ME BUTTONS ============= */
 .me-bottom-enter {
   opacity: 0;
   transform: translateY(150%);
@@ -433,6 +475,49 @@ p.func-bracket{
   transform: translateY(0%);
 }
 .me-bottom-exit-active {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* ================= SKILLS BUTTONS ================ */
+.skills-button-enter {
+  opacity: 0;
+  transform: translateX(150%);
+}
+.skills-button-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+.skills-button-enter-done{
+  border-radius: 20px;
+  background: #282c34;
+  animation: button-appear-color 700ms ease none;
+  animation: button-appear-boxshadow 700ms ease none;
+  box-shadow:  -10px -10px 42px #20242a, 
+  10px 10px 42px #30343e;
+}
+
+.skills-button-enter-done:hover{
+  transform: scale(1.02);
+  background: #282c34;
+  background: linear-gradient(315deg, #24282f, #2b2f38);
+  box-shadow:  -10px -10px 42px #20242a, 
+              10px 10px 42px #30343e;
+}
+
+.skills-button-enter-done:active{
+  background: #282c34;
+  box-shadow: inset -10px -10px 42px #20242a, 
+              inset 10px 10px 42px #30343e;
+}
+
+.skills-button-exit{
+  opacity: 1;
+  transform: translateY(0%);
+}
+.skills-button-exit-active {
   opacity: 0;
   transform: translateY(100%);
   transition: 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);

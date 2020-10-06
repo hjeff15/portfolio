@@ -31,7 +31,7 @@ class Skills extends React.Component{
     },1000)
   }
 
-  buttonProp="skills-button";
+  buttonClassProp="skills-button";
 
   componentDidMount(){
     this.setState({
@@ -47,10 +47,10 @@ class Skills extends React.Component{
           <Skill key={key} details={this.state.mySkills[key]} view={this.state.view}/>)}
         </ul>
         <div className="skills-buttons">
-          {/* Buttons not yet passed their prop , like in the ME component/page */}
-          <Button name="projects" view={this.state.view} changePage={this.changePage} buttonProp={this.buttonProp}/>
-          <Button name="skills" view={this.state.view} changePage={this.changePage} buttonProp={this.buttonProp}/>
-          <Button name="contact" view={this.state.view} changePage={this.changePage} buttonProp={this.buttonProp}/>
+          {/* Buttons not yet passed their prop , like in the ME component/pageŸ */}
+          <Button name="projects" view={this.state.view} changePage={this.changePage} buttonClassProp={this.buttonClassProp}/>
+          <Button name="me" view={this.state.view} changePage={this.changePage} buttonClassProp={this.buttonClassProp}/>
+          <Button name="contact" view={this.state.view} changePage={this.changePage} buttonClassProp={this.buttonClassProp}/>
         </div>
 
       </div> 

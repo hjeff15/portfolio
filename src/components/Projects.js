@@ -1,13 +1,17 @@
 import React from 'react';
-import{CSSTransition} from "react-transition-group";
+// import{CSSTransition} from "react-transition-group";
+
+import Project from "./Project";
+import myProjects from "../projectList";
 
 import '../css/App.css';
 
 
 class Projects extends React.Component{
   state = {
-    visible: false
-  }
+    myProjects,
+    view: false
+  };
 
   componentDidMount(){
     this.setState({
@@ -17,20 +21,12 @@ class Projects extends React.Component{
 
   render(){
     return (
-      <CSSTransition in={this.state.visible} 
-        timeout={{enter: 1000}}
-        classNames="projects"
-        unmountOnExit
-        >
         <div className="Projects-page-layout">
-          <main>
-            <p>
-              These are my projects
-            </p>
-          </main>
+          <ul>
+          {Object.keys(this.state.myProjects).map(key => 
+          <Project key={key} details={this.state.myProjects[key]} view={this.state.view}/>)}
+          </ul>
         </div> 
-      </CSSTransition>
-
     );
   }
 }
