@@ -32,8 +32,9 @@ class Menu extends React.Component{
                     >
                     <header className="App-header">
                         <h1 className="type-writer">
-                            <span className="function">function</span> 
-                            <span className="function-name"> front-end-developer</span>
+                            <span className="function">function </span> 
+                            <span className="function-name omit">front-end-</span>
+                            <span className="function-name">developer</span>
                             <span className="brackets">(</span>
                             <span className="param">hugo</span>
                             <span className="brackets">)</span>

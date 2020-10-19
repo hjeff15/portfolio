@@ -1,135 +1,289 @@
-
-html{
+html {
   background-color: #282c34;
 }
 /* ======================PAGE LAYOUTS ================= */
-.Homepage-page-layout{
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+.Homepage-page-layout {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
   text-align: center;
-  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.Me-page-layout{
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+.Me-page-layout {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
   box-sizing: border-box;
-  height: 100vh;
+  height: 90vh;
   column-gap: 10px;
-  /* overflow: hidden; */
   display: grid;
-  grid-template-columns: 1fr 1fr ;
-  grid-template-rows: 1fr 1fr ;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50% 50%;
   grid-template-areas:
     "blurb image"
     "button image";
   color: white;
 }
 
-.Projects-page-layout{
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+.Projects-page-layout {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
   box-sizing: border-box;
-  height: 100vh;
+  height: 88vh;
   column-gap: 10px;
-  /* overflow: hidden; */
   display: grid;
-  grid-template-rows: 750px 1fr;
+  grid-template-rows: 660px 140px;
   column-gap: 10px;
-  grid-template-areas: 
+  grid-template-areas:
     "main"
     "buttons";
   color: white;
 }
 
-.Skills-page-layout{
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
-  /* column-gap: 10px; */
+.Skills-page-layout {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
   color: white;
+  height: 90vh;
   display: grid;
-  grid-template-rows: 750px 1fr;
-  grid-template-areas: 
+  grid-template-rows: 650px 160px;
+  grid-template-areas:
     "main"
     "buttons";
+}
+
+.Contact-page-layout {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  color: white;
+  text-align: center;
+  min-height: 98vh;
+  /* align-items: center; */
+  font-size: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 800px 1fr;
+  grid-template-rows: 100px 540px 80px;
+  grid-template-areas:
+    ". header ."
+    ". formBox media"
+    ". backButton .";
 }
 
 /* ====================================== */
 
-#hugo{
-  max-width: 80%;
-  object-fit: contain;
-  border-radius: 20px;
-  margin-left: 50px;
-}
-.me-photo{
-  grid-area: image;
-}
-
-.type-writer{
+/* ============== CONTACT PAGE ============ */
+.contact-type-writer {
   color: white;
-  font-size: 30px;
+  font-size: 45px;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid; /* The typwriter cursor */
+  border-right: 0.15em solid; /* The typwriter cursor */
   border-color: transparent;
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto 4px; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
+  letter-spacing: 0.15em; /* Adjust as needed */
   padding-bottom: 5px;
-  animation: 
-    typingLn1 1.5s steps(30, end),
-    blink-caret .75s step-end 2;
+  padding-top: 35px;
+  animation: contactTyping 1.5s steps(20, end),
+    blink-caret 0.75s step-end infinite;
 }
 
-.me-type{
+.contact-header {
+  grid-area: header;
+}
+.contact-form {
+  grid-area: formBox;
+  display: grid;
+  grid-template-columns: 1fr 500px 1fr;
+  grid-template-rows: 90px 90px 250px 100px;
+  grid-template-areas:
+    ". nameBox ."
+    ". emailBox ."
+    ". msgBox ."
+    ". submit .";
+}
+.contact-name {
+  grid-area: nameBox;
+  display: flex;
+}
+.contact-email {
+  grid-area: emailBox;
+  display: flex;
+}
+input#name {
+  width: 375px;
+  margin-left: 35px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  font-size: 15px;
+}
+input#email {
+  width: 376px;
+  margin-left: 18px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  font-size: 15px;
+}
+
+input#name,
+input#email {
+  border-radius: 20px;
+  height: 40px;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+
+.contact-msg {
+  grid-area: msgBox;
+}
+textarea#message {
+  border-radius: 20px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  font-size: 15px;
+  padding: 20px 20px 10px 20px;
+}
+.contact-button {
+  grid-area: submit;
+}
+button.contact-button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.back-button {
+  grid-area: backButton;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+#home {
+  flex-grow: 1;
+}
+
+.social-icons {
+  grid-area: media;
+  display: flex;
+  text-align: start;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+img#twitter,
+img#linkedin {
+  width: 70px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+img#github {
+  width: 62px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  background-color: white;
+  border-radius: 15px;
+  padding-bottom: 1px;
+}
+
+/* ====================== ME PAGE ============ */
+#hugo {
+  width: 530px;
+  /* object-fit: contain; */
+  border-radius: 20px;
+  margin-left: 50px;
+}
+.me-photo {
+  grid-area: image;
+}
+
+.type-writer {
+  color: white;
+  font-size: 30px;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid; /* The typwriter cursor */
+  border-color: transparent;
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto 4px; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  padding-bottom: 5px;
+  animation: typingLn1 1.5s steps(30, end), blink-caret 0.75s step-end 2;
+}
+
+.me-type {
   grid-area: blurb;
   border: 1px solid white;
   border-radius: 20px;
   color: orange;
-  font-size: 30px;
+  font-size: 29px;
   /* letter-spacing: .15em;  */
 }
-p.me-type{
+p.me-type {
+  font-size: 27px;
   padding: 10px 20px 20px 50px;
+  margin-bottom: 0px;
 }
 
-
 /* =============BUTTONS================= */
-.buttons{
+.buttons {
   font-family: inherit;
   display: flex;
   flex-direction: column;
   border: none;
   background-color: transparent;
-  padding: 5px 15px 25px 15px;
-  margin: 5px 25px 35px 25px;
+  padding: 15px 15px 15px 15px;
+  margin: 0px 25px 5px 15px;
   color: white;
   font-size: 2rem;
   cursor: pointer;
   outline: 0;
 }
 
-button{
+button {
   align-items: center;
 }
-div.skills-buttons{
+div.skills-buttons {
   grid-area: buttons;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 5px 15px 25px 15px;
   margin: 5px 25px 35px 25px;
 }
-
+div.project-buttons {
+  grid-area: buttons;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px 15px 25px 15px;
+  margin: 5px 25px 10px 25px;
+}
+#projects.buttons {
+  display: flex;
+  flex-grow: 3;
+  margin-top: 20px;
+}
+#me.buttons {
+  display: flex;
+  flex-grow: 3;
+  margin-top: 20px;
+}
+#contact.buttons {
+  display: flex;
+  flex-grow: 3;
+  margin-top: 20px;
+}
+#skills.buttons {
+  display: flex;
+  flex-grow: 3;
+  margin-top: 20px;
+}
+#home.buttons {
+  margin-left: 160px;
+  margin-right: 160px;
+}
 /* ======================================= */
 
 /* =================SKILL CARD ================= */
-.skills{
+.skills {
   list-style: none;
   display: flex;
   flex-flow: row;
@@ -138,14 +292,14 @@ div.skills-buttons{
   padding: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 220px 250px 250px;
+  grid-template-rows: 220px 220px 220px;
   grid-template-areas:
     "firstRow firstRow"
     "secondRow secondRow"
     "thirdRow thirdRow";
 }
 
-.single-skill{
+.single-skill {
   box-sizing: border-box;
   border-radius: 20px;
   padding: 0px 10px 10px 0px;
@@ -154,250 +308,318 @@ div.skills-buttons{
   display: grid;
   grid-template-columns: 100px 1fr;
   grid-template-rows: 80px 100px;
-  grid-template-areas: 
+  grid-template-areas:
     "image header"
-    "description description"
-  ;
+    "description description";
 }
 
-img.skill-image{
-  width:70px;
+img.skill-image {
+  width: 70px;
 }
-h2.skill-header{
+h2.skill-header {
   grid-area: header;
   padding: 20px 0px 0px 50px;
   margin-top: 0px;
   margin-bottom: 0px;
+  font-size: 2.2rem;
 }
-p.skill-description{
+#card-resDes h2.skill-header{
+  font-size: 1.7rem;
+}
+p.skill-description {
   grid-area: description;
   margin-top: 0px;
   padding: 0px 10px 0px 10px;
 }
 
-img#p5.skill-image,
 img#javascript.skill-image,
-img#three.skill-image{
+img#three.skill-image {
   border-radius: 20px 0 0 0;
 }
 
-img#css.skill-image{
-  width: 80%;
+img#vue.skill-image {
+  width: 50px;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+img#css.skill-image {
+  width: 50%;
+  padding-left: 14px;
+  padding-top: 5px;
+}
+img#html.skill-image {
+  width: 70%;
+  padding-left: 8px;
+  padding-top: 5px;
 }
 
 /* ========================================= */
 
 /* ================= PROJECT CARDS ================== */
-.project-card{
+.project-card {
   border: 1px solid white;
   border-radius: 30px;
-  margin-bottom: 10px;
+  margin: 15px 120px 23px 120px;
   grid-area: main;
   display: grid;
-  grid-template-columns: 400px 1fr;
-  grid-template-rows: 80px 1fr;
-  grid-template-areas: 
+  grid-template-columns: 320px 1fr;
+  grid-template-rows: 60px 140px;
+  grid-template-areas:
     "vid  header"
     "vid description";
 }
 
-.project-videos{
-  width: 350px;
+.project-list {
+  padding-left: 0px;
+  margin: 0px;
+}
+
+.project-videos {
+  width: 264px;
   border-radius: 30px;
   grid-area: vid;
 }
-#walkrunrideclimb{
-  height: 250px;
+#walkrunrideclimb.project-videos {
+  margin-top: 28px;
+  margin-left: 10px;
+}
+#tonedrum.project-videos {
+  width: 240px;
+  margin-top: 11px;
+  margin-left: 18px;
+}
+#ocrapp.project-videos {
+  width: 240px;
+  margin-top: 11px;
+  margin-left: 18px;
 }
 
-.project-header{
+.project-header {
   grid-area: header;
 }
-.project-description{
+.project-description {
   grid-area: description;
 }
 
-h2.project-header{
-  margin-left: 150px;
+h2.project-header {
+  display: flex;
+  justify-content: center;
   font-size: 1.7rem;
+  margin: 10px;
+}
+
+p.project-description {
+  margin: 0px;
+  padding-right: 20px;
 }
 
 /* =================MENU PAGE STYLES =============== */
-p.about-me{
+p.about-me {
   font-size: 30px;
   /* padding-top: 0px; */
   /* padding-bottom: 0px; */
   width: 0;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid; /* The typwriter cursor */
+  border-right: 0.15em solid; /* The typwriter cursor */
   border-color: transparent;
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto 4px 100px; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
+  letter-spacing: 0.15em; /* Adjust as needed */
   padding-bottom: 5px;
-  animation: 
-    typingLn2 1.5s steps(20, end),
-    blink-caret .75s step-end 3;
-    /* visibiltyLn2 1s fadeIn; */
+  animation: typingLn2 1.5s steps(20, end), blink-caret 0.75s step-end 3;
+  /* visibiltyLn2 1s fadeIn; */
   animation-delay: 1.6s;
   animation-fill-mode: forwards;
 }
 
-p.my-skills{
+p.my-skills {
   font-size: 30px;
   /* padding-top: 0px; */
   /* padding-bottom: 0px; */
   width: 0;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid; /* The typwriter cursor */
+  border-right: 0.15em solid; /* The typwriter cursor */
   border-color: transparent;
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto 4px 100px; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
+  letter-spacing: 0.15em; /* Adjust as needed */
   padding-bottom: 5px;
-  animation: 
-    typingLn3 1.5s steps(15, end),
-    blink-caret .75s step-end 2;
-    /* visibiltyLn2 1s fadeIn; */
+  animation: typingLn3 1.5s steps(15, end), blink-caret 0.75s step-end 2;
+  /* visibiltyLn2 1s fadeIn; */
   animation-delay: 4s;
   animation-fill-mode: forwards;
 }
 
-p.my-projects{
+p.my-projects {
   font-size: 30px;
   /* padding-top: 0px; */
   /* padding-bottom: 0px; */
   width: 0;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid; /* The typwriter cursor */
+  border-right: 0.15em solid; /* The typwriter cursor */
   border-color: transparent;
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto 4px 100px; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
+  letter-spacing: 0.15em; /* Adjust as needed */
   padding-bottom: 5px;
-  animation: 
-    typingLn4 1.5s steps(15, end),
-    blink-caret .75s step-end 2;
-    /* visibiltyLn2 1s fadeIn; */
+  animation: typingLn4 1.5s steps(15, end), blink-caret 0.75s step-end 2;
+  /* visibiltyLn2 1s fadeIn; */
   animation-delay: 5.5s;
   animation-fill-mode: forwards;
 }
 
-p.my-contact{
+p.my-contact {
   font-size: 30px;
   /* padding-top: 0px; */
   /* padding-bottom: 0px; */
   width: 0;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid; /* The typwriter cursor */
+  border-right: 0.15em solid; /* The typwriter cursor */
   border-color: transparent;
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto 4px 95px; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typingLn5 1.5s steps(15, end),
-    blink-caret .75s step-end 2;
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typingLn5 1.5s steps(15, end), blink-caret 0.75s step-end 2;
   animation-delay: 7s;
   animation-fill-mode: forwards;
 }
 
-p.func-bracket{
+p.func-bracket {
   font-size: 30px;
   /* padding-top: 0px; */
   /* padding-bottom: 0px; */
   width: 0;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid; /* The typwriter cursor */
+  border-right: 0.15em solid; /* The typwriter cursor */
   border-color: transparent;
   white-space: nowrap; /* Keeps the content on a single line */
   margin-right: auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typingLn6 0.5s steps(2, end),
-    blink-caret .75s step-end infinite;
-    /* visibiltyLn2 1s fadeIn; */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typingLn6 0.5s steps(2, end), blink-caret 0.75s step-end infinite;
+  /* visibiltyLn2 1s fadeIn; */
   animation-delay: 8.5s;
   animation-fill-mode: forwards;
 }
 
-.branch:hover { 
+.branch:hover {
   cursor: pointer;
   text-decoration: underline orange;
 }
 
-.function{
+.function {
   color: rgb(158, 114, 158);
 }
 
-.function-name{
+.function-name {
   color: rgb(57, 105, 187);
 }
 
-.brackets{
+.brackets {
   color: rgb(91, 206, 168);
 }
 
-.param{
+.param {
   color: orange;
 }
 
-.this{
+.this {
   color: red;
 }
 /* ===================TYPING EFFECT ANIMATIONS ================= */
 /* The typing effect */
 @keyframes typingLn1 {
-  from { width: 0 }
-  to { width:100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* typing line 2 */
 @keyframes typingLn2 {
-  from { width: 0 }
-  to { width:50% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
 }
 
 /* typing line 3 */
 @keyframes typingLn3 {
-  from { width: 0 }
-  to { width:60% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 60%;
+  }
 }
 
 /* typing line 4 */
 @keyframes typingLn4 {
-  from { width: 0 }
-  to { width:70% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 70%;
+  }
 }
 
 /* typing line 5 */
 @keyframes typingLn5 {
-  from { width: 0 }
-  to { width:75% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
 }
 
 /* typing line 6 */
 @keyframes typingLn6 {
-  from { width: 0 }
-  to { width:10% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 10%;
+  }
+}
+
+/* contact page typing */
+@keyframes contactTyping {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: white; }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
 }
 
 /* ================== CCSTransitions ============= */
+
 /* ========ME PAGE TRANSITIONS */
-.menu-exit{
+.menu-exit {
   opacity: 1;
   transform: translateY(0%);
 }
 
-.menu-exit-active{
+.menu-exit-active {
   opacity: 0;
   transform: translateY(-200%);
-  transition: 900ms ease-in-out;
+  transition: all 900ms ease-in-out;
 }
 
 .me-left-enter {
@@ -407,17 +629,17 @@ p.func-bracket{
 .me-left-enter-active {
   opacity: 1;
   transform: translateX(0%);
-  transition: 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .me-left-exit {
   opacity: 1;
   transform: translateX(0%);
 }
-.me-left-exit-active{
+.me-left-exit-active {
   opacity: 0;
   transform: translateX(-150%);
-  transition: 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .me-right-enter {
@@ -427,59 +649,57 @@ p.func-bracket{
 .me-right-enter-active {
   opacity: 1;
   transform: translateX(0%);
-  transition: 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .me-right-exit {
   opacity: 1;
 }
 .me-right-exit-active {
   opacity: 0;
-  transition: 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 /* ================== ME BUTTONS ============= */
-.me-bottom-enter {
+.me-button-enter {
   opacity: 0;
   transform: translateY(150%);
 }
-.me-bottom-enter-active {
+.me-button-enter-active {
   opacity: 1;
   transform: translateY(0%);
-  transition: 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
+  transition: all 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.me-bottom-enter-done{
+.me-button-enter-done {
   border-radius: 20px;
   background: #282c34;
   animation: button-appear-color 700ms ease none;
   animation: button-appear-boxshadow 700ms ease none;
-  box-shadow:  -10px -10px 42px #20242a, 
-  10px 10px 42px #30343e;
+  box-shadow: -10px -10px 42px #20242a, 10px 10px 42px #30343e;
 }
 
-.me-bottom-enter-done:hover{
+.me-button-enter-done:hover {
   transform: scale(1.02);
   background: #282c34;
   background: linear-gradient(315deg, #24282f, #2b2f38);
-  box-shadow:  -10px -10px 42px #20242a, 
-              10px 10px 42px #30343e;
+  box-shadow: -10px -10px 42px #20242a, 10px 10px 42px #30343e;
 }
 
-.me-bottom-enter-done:active{
+.me-button-enter-done:active {
   background: #282c34;
-  box-shadow: inset -10px -10px 42px #20242a, 
-              inset 10px 10px 42px #30343e;
+  box-shadow: inset -10px -10px 42px #20242a, inset 10px 10px 42px #30343e;
 }
 
-.me-bottom-exit{
+.me-button-exit {
   opacity: 1;
   transform: translateY(0%);
 }
-.me-bottom-exit-active {
+.me-button-exit-active {
   opacity: 0;
   transform: translateY(100%);
-  transition: 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
 /* ================= SKILLS BUTTONS ================ */
+
 .skills-button-enter {
   opacity: 0;
   transform: translateX(150%);
@@ -488,93 +708,1792 @@ p.func-bracket{
   opacity: 1;
   transform: translateX(0%);
   transition: 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
 }
-.skills-button-enter-done{
+.skills-button-enter-done {
   border-radius: 20px;
   background: #282c34;
   animation: button-appear-color 700ms ease none;
   animation: button-appear-boxshadow 700ms ease none;
-  box-shadow:  -10px -10px 42px #20242a, 
-  10px 10px 42px #30343e;
+  box-shadow: -10px -10px 42px #20242a, 10px 10px 42px #30343e;
 }
 
-.skills-button-enter-done:hover{
+.skills-button-enter-done:hover {
   transform: scale(1.02);
   background: #282c34;
   background: linear-gradient(315deg, #24282f, #2b2f38);
-  box-shadow:  -10px -10px 42px #20242a, 
-              10px 10px 42px #30343e;
+  box-shadow: -10px -10px 42px #20242a, 10px 10px 42px #30343e;
 }
 
-.skills-button-enter-done:active{
+.skills-button-enter-done:active {
   background: #282c34;
-  box-shadow: inset -10px -10px 42px #20242a, 
-              inset 10px 10px 42px #30343e;
+  box-shadow: inset -10px -10px 42px #20242a, inset 10px 10px 42px #30343e;
 }
 
-.skills-button-exit{
+.skills-button-exit {
   opacity: 1;
   transform: translateY(0%);
 }
 .skills-button-exit-active {
   opacity: 0;
   transform: translateY(100%);
+  transition: all 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ================= PROJECT BUTTONS ================ */
+
+.project-button-enter {
+  opacity: 0;
+  transform: translateX(150%);
+}
+.project-button-enter-active {
+  /* color: orange; */
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.project-button-enter-done {
+  border-radius: 20px;
+  background: #282c34;
+  animation: button-appear-color 700ms ease none;
+  animation: button-appear-boxshadow 700ms ease none;
+  box-shadow: -10px -10px 42px #20242a, 10px 10px 42px #30343e;
+}
+
+.project-button-enter-done:hover {
+  transform: scale(1.02);
+  background: #282c34;
+  background: linear-gradient(315deg, #24282f, #2b2f38);
+  box-shadow: -10px -10px 42px #20242a, 10px 10px 42px #30343e;
+}
+
+.project-button-enter-done:active {
+  background: #282c34;
+  box-shadow: inset -10px -10px 42px #20242a, inset 10px 10px 42px #30343e;
+}
+
+.project-button-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.project-button-exit-active {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* =============SUBMIT+HOME BUTTON ON CONTACT PAGE================ */
+
+.submit-button-enter {
+  opacity: 0;
+  transform: translateY(150%);
+}
+.submit-button-enter-active {
+  /* color: orange; */
+  opacity: 1;
+  transform: translateY(0%);
+  transition: all 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.submit-button-enter-done {
+  border-radius: 20px;
+  background: #282c34;
+  animation: button-appear-color 700ms ease none;
+  animation: button-appear-boxshadow 700ms ease none;
+  box-shadow: -10px -10px 42px #20242a, 10px 10px 42px #30343e;
+}
+
+.submit-button-enter-done:hover {
+  transform: scale(1.02);
+  background: #282c34;
+  background: linear-gradient(315deg, #24282f, #2b2f38);
+  box-shadow: -10px -10px 42px #20242a, 10px 10px 42px #30343e;
+}
+
+.submit-button-enter-done:active {
+  background: #282c34;
+  box-shadow: inset -10px -10px 42px #20242a, inset 10px 10px 42px #30343e;
+}
+
+.submit-button-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.submit-button-exit-active {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.home-button-enter {
+  opacity: 0;
+  transform: translateY(150%);
+}
+.home-button-enter-active {
+  /* color: orange; */
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.home-button-enter-done {
+  border-radius: 20px;
+  background: #282c34;
+  animation: button-appear-color 700ms ease none;
+  animation: button-appear-boxshadow 700ms ease none;
+  box-shadow: -10px -10px 42px #20242a, 10px 10px 42px #30343e;
+}
+
+.home-button-enter-done:hover {
+  transform: scale(1.02);
+  background: #282c34;
+  background: linear-gradient(315deg, #24282f, #2b2f38);
+  box-shadow: -10px -10px 42px #20242a, 10px 10px 42px #30343e;
+}
+
+.home-button-enter-done:active {
+  background: #282c34;
+  box-shadow: inset -10px -10px 42px #20242a, inset 10px 10px 42px #30343e;
+}
+
+.home-button-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.home-button-exit-active {
+  opacity: 0;
+  transform: translateY(100%);
   transition: 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* ========================================================= */
+
 /* ======SKILLS PAGE TRANSITIONS ===== */
-#card-html.skill-card-enter{
+#card-html.skill-card-enter {
   transform: translateY(-200%);
 }
-#card-html.skill-card-enter-active{
+#card-html.skill-card-enter-active {
   transform: translateY(0%);
-  transition: 1000ms cubic-bezier(.62,-0.46,.3,1.43);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
-#card-javascript.skill-card-enter{
+#card-html.skill-card-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+#card-html.skill-card-exit-active {
+  opacity: 0;
+  transform: translateY(-200%);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+
+#card-javascript.skill-card-enter {
   transform: translateX(-200%);
 }
-#card-javascript.skill-card-enter-active{
+#card-javascript.skill-card-enter-active {
   transform: translateX(0%);
-  transition: 1000ms cubic-bezier(.62,-0.46,.3,1.43);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
-#card-resDes.skill-card-enter{
+#card-javascript.skill-card-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+#card-javascript.skill-card-exit-active {
+  opacity: 0;
+  transform: translateX(-200%);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+
+#card-resDes.skill-card-enter {
   transform: translateY(200%);
 }
-#card-resDes.skill-card-enter-active{
+#card-resDes.skill-card-enter-active {
   transform: translateY(0%);
-  transition: 1000ms cubic-bezier(.62,-0.46,.3,1.43);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
-#card-css.skill-card-enter{
+#card-resDes.skill-card-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+#card-resDes.skill-card-exit-active {
+  opacity: 0;
+  transform: translateY(200%);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+
+#card-css.skill-card-enter {
   transform: translateY(-200%);
 }
-#card-css.skill-card-enter-active{
+#card-css.skill-card-enter-active {
   transform: translateY(0%);
-  transition: 1000ms cubic-bezier(.62,-0.46,.3,1.43);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
-#card-react.skill-card-enter{
+#card-css.skill-card-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+#card-css.skill-card-exit-active {
+  opacity: 0;
+  transform: translateY(-200%);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+
+#card-react.skill-card-enter {
   transform: translateX(200%);
 }
-#card-react.skill-card-enter-active{
+#card-react.skill-card-enter-active {
   transform: translateX(0%);
-  transition: 1000ms cubic-bezier(.62,-0.46,.3,1.43);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
-#card-p5.skill-card-enter{
+#card-react.skill-card-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+#card-react.skill-card-exit-active {
+  opacity: 0;
+  transform: translateX(200%);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+
+#card-vue.skill-card-enter {
   transform: translateY(200%);
 }
-#card-p5.skill-card-enter-active{
+#card-vue.skill-card-enter-active {
   transform: translateY(0%);
-  transition: 1000ms cubic-bezier(.62,-0.46,.3,1.43);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+#card-vue.skill-card-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+#card-vue.skill-card-exit-active {
+  opacity: 0;
+  transform: translateY(200%);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+
+/* ====== PROJECTS PAGE TRANSITIONS ===== */
+#project-card-tonedrum.projects-enter {
+  opacity: 0;
+  transform: translateY(-200%);
+}
+#project-card-tonedrum.projects-enter-active {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+#project-card-tonedrum.projects-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+#project-card-tonedrum.projects-exit-active {
+  opacity: 0;
+  transform: translateY(-200%);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+
+#project-card-walkrunrideclimb.projects-enter {
+  opacity: 0;
+  transform: translateX(-200%);
+}
+#project-card-walkrunrideclimb.projects-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+#project-card-walkrunrideclimb.projects-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+#project-card-walkrunrideclimb.projects-exit-active {
+  opacity: 0;
+  transform: translateX(-200%);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+
+#project-card-ocrapp.projects-enter {
+  transform: translateX(200%);
+}
+#project-card-ocrapp.projects-enter-active {
+  transform: translateX(0%);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+#project-card-ocrapp.projects-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+#project-card-ocrapp.projects-exit-active {
+  opacity: 0;
+  transform: translateX(200%);
+  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+
+/* ====================CONTACT ME TRANSITIONS ============== */
+.submit-name-enter {
+  opacity: 0;
+  transform: translateX(-200%);
+}
+.submit-name-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+
+.submit-email-enter {
+  opacity: 0;
+  transform: translateX(200%);
+}
+.submit-email-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
+
+.submit-text-enter {
+  opacity: 0;
+}
+.submit-text-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in-out;
+}
+
+.contact-socials-enter {
+  opacity: 0;
+}
+.contact-socials-enter-active {
+  opacity: 1;
+  transition: opacity 2000ms ease-in-out;
 }
 
 /* ============= CSS TRANSITION ANIMATIONS ========= */
-@keyframes button-appear-color{
-  from, to {background: transparent}
-  100% {background: #282c34}
+@keyframes button-appear-color {
+  from,
+  to {
+    background: transparent;
+  }
+  100% {
+    background: #282c34;
+  }
 }
 
-@keyframes button-appear-boxshadow{
-  from, to{box-shadow: none;}
-  100% {   box-shadow:  -10px -10px 42px #20242a, 
-    10px 10px 42px #30343e}
+@keyframes button-appear-boxshadow {
+  from,
+  to {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: -10px -10px 42px #20242a, 10px 10px 42px #30343e;
+  }
+}
+
+/* ======================================= MEDIA QUIERIES =================================== */
+
+@media only screen and (max-width: 1197px) {
+
+  /* ME PAGE */
+  .Me-page-layout{
+    column-gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+      "blurb image"
+      "button image";
+  }
+  #hugo{
+    width: 480px;
+    margin-top: 20px;
+  }
+  p.me-type{
+    font-size: 26px;
+  }
+  /* PROJECT */
+  .Projects-page-layout{
+    grid-template-rows: 655px 140px;
+    column-gap: 5px;
+  }
+  .project-card{
+    grid-template-columns: 320px 1fr;
+    grid-template-rows: 60px 140px;
+    grid-template-areas:
+      "vid  header"
+      "vid description";
+    margin: 15px 120px 23px 120px;
+  }
+  p.project-description{
+    font-size: 15px;
+  }
+  h2.skill-header{
+    font-size: 2.1rem;
+  }
+}
+@media only screen and (max-width: 1098px){
+  #project-card-tonedrum p.project-description{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+
+  /* ME PAGE */
+  .Me-page-layout{
+    column-gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+      "blurb image"
+      "button image";
+  }
+  #hugo{
+    width: 400px;
+    margin-top: 90px;
+    margin-right: 40px;
+  }
+  p.me-type{
+    font-size: 25px;
+  }
+    /* ===CONTACT=== */
+    .Contact-page-layout{
+      grid-template-columns: 1fr 700px 1fr;
+      grid-template-rows: 100px 520px 80px;
+    }
+    .contact-form{
+      grid-template-columns: 1fr 500px 1fr;
+      grid-template-rows: 80px 80px 250px 100px;
+    }
+    #home.buttons {
+      margin-left: 117px;
+      margin-right: 128px;
+  }
+}
+
+@media only screen and (max-width: 1044px){
+  h2.skill-header{
+    padding: 15px 0px 0px 50px;
+    font-size: 2rem;
+  }
+  #card-resDes h2.skill-header{
+    padding-top: 8px;
+  }
+  p.skill-description{
+    font-size: 0.95rem;
+  }
+}
+
+@media only screen and (max-width: 1012px){
+  p.me-type{
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 998px){
+  .skills{
+    margin-top: 0px;
+  }
+  .Skills-page-layout{
+    grid-template-rows: 640px 160px;
+  }
+  .single-skill{
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 70px 150px;
+  }
+
+}
+
+@media only screen and (max-width: 995px){
+  .Projects-page-layout{
+    grid-template-rows: 650px 140px;
+  }
+  .project-card{
+    margin: 15px 10px 5px 10px;
+  }
+}
+@media only screen and (max-width: 979px){
+  p.me-type{
+    font-size: 23px;
+    padding-bottom: 10px;
+  }
+  /* ===CONTACT=== */
+  .Contact-page-layout{
+    grid-template-columns: 1fr 600px 1fr;
+  }
+  #home.buttons {
+    margin-left: 70px;
+    margin-right: 71px;
+  }
+}
+@media only screen and (max-width: 925px){
+  .Skills-page-layout {
+    grid-template-rows: 665px 160px;
+  }
+  .skills{
+    grid-template-rows: 230px 230px 230px;
+  }
+  .single-skill{
+    grid-template-rows: 60px 100px;
+  }
+
+  /* h2.skill-header{
+    padding-top: 8px;
+  } */
+  p.skill-description{
+    padding-top: 15px;
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+}
+@media only screen and (max-width: 909px){
+  p.me-type{
+    font-size: 22px;
+    padding-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 892px){
+  p.me-type{
+    font-size: 21px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 839px) {
+
+  /* ME PAGE */
+  .Me-page-layout{
+    column-gap: 10px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 240px 1fr 1fr;
+    grid-template-areas:
+      "blurb blurb"
+      "image button";
+  }
+  #hugo{
+    width: 340px;
+    margin-top: 30px;
+    margin-right: 40px;
+  }
+  p.me-type{
+    font-size: 26px;
+    margin-top: 5px;
+  }
+  .me-text-and-type{
+    grid-area: blurb;
+    margin: 5px 10px 10px 5px;
+  }
+  .buttons{
+    grid-area: button;
+  }
+  button#projects.buttons.function.me-button-enter-done{
+    padding-top: 35px;
+  }
+  button#skills.buttons.function.me-button-enter-done{
+    padding-top: 35px;
+  }
+  button#contact.buttons.function.me-button-enter-done{
+    padding-top: 35px;
+  }
+  /* ====PROJECT PAGE===== */
+  .Projects-page-layout{
+    grid-template-rows: 1fr 100px;
+    column-gap: 10px;
+    grid-template-areas:
+      "main"
+      "buttons";
+  }
+  div.project-buttons{
+    position: sticky;
+  }
+  .project-card{
+    grid-template-columns: 380px 380px;
+    grid-template-rows: 50px 130px 170px;
+    grid-template-areas:
+      "header header"
+      "vid description"
+      "vid description";
+  }
+  #tonedrum.project-videos {
+    width: 335px;
+    margin-top: 15px;
+    margin-left: 23px;
+  }
+  #walkrunrideclimb.project-videos {
+    width: 360px;
+    margin-top: 15px;
+    margin-left: 12px;
+  }
+  #ocrapp.project-videos {
+    width: 335px;
+    margin-top: 15px;
+    margin-left: 23px;
+  }
+  p.project-description {
+    font-size: 19px;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+  }
+  #project-card-tonedrum p.project-description{
+    word-wrap: break-word;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+  }
+  h2.project-header{
+    font-size: 35px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+  button#me.buttons.function.project-button-enter-done{
+    display: flex;
+    margin: auto;
+  }
+  button#skills.buttons.function.project-button-enter-done{
+    display: flex;
+    margin: auto;
+  }
+  button#contact.buttons.function.project-button-enter-done{
+    display: flex;
+    margin: auto;
+  } 
+  /* ===CONTACT=== */
+  .Contact-page-layout{
+    grid-template-columns: 1fr 500px 1fr;
+  }
+  .social-icons {
+    text-align: center;
+  }
+  .contact-button {
+    grid-area: submit;
+  }
+  button.contact-button {
+    margin-top: 21px;
+    margin-bottom: 10px;
+}
+  #home.buttons {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+}
+
+@media only screen and (max-width: 800px){
+  /* ===HOMEPAGE=== */
+  .type-writer{
+    font-size: 25px;
+  }
+  p.my-self{
+    font-size: 25px;
+  }
+  p.about-me{
+    font-size: 25px;
+  }
+  p.my-projects{
+    font-size: 25px;
+  }
+  p.my-skills{
+    font-size: 25px;
+  }
+  p.my-contact{
+    font-size: 25px;
+  }
+  p.func-bracket{
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 780px){
+  .Projects-page-layout{
+    grid-template-columns: 740px;
+    grid-template-rows: 1fr 100px;
+    column-gap: 10px;
+    grid-template-areas:
+      "main"
+      "buttons";
+    margin-right: 10px;
+  }
+  .project-card{
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 60px 250px;
+    grid-template-areas:
+      "vid  header"
+      "vid description";  
+    margin-right: 10px;
+  }
+  #tonedrum.project-videos {
+    width: 265px;
+    margin-top: 55px;
+    margin-left: 23px;
+  }
+  #walkrunrideclimb.project-videos {
+    width: 285px;
+    margin-top: 85px;
+    margin-left: 17px;
+  }
+  #ocrapp.project-videos {
+    width: 235px;
+    margin-top: 85px;
+    margin-left: 45px;
+  }
+  p.project-description{
+    overflow: auto;
+  }
+  /* ===========SKILLS============= */
+  .Skills-page-layout{
+    grid-template-rows: 1120px 120px;
+  }
+  .skills {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 90%;
+    grid-template-rows: repeat(6, 190px);
+    grid-template-areas:
+      "firstRow" 
+      "secondRow"
+      "thirdRow" 
+      "fourthRow"
+      "fifthRow" 
+      "sixthRow";
+  }
+  .single-skill {
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 60px 100px;
+  grid-template-areas:
+    "image header"
+    "description description";
+  }
+  p.skill-description{
+    text-align: center;
+    font-size: 1rem;
+    padding-top: 5px;
+  }
+  #card-resDes h2.skill-header{
+    font-size: 2rem;
+    padding: 15px 0px 0px 0px;
+  }
+  #card-resDes p.skill-description,
+  #card-javascript p.skill-description{
+    font-size: 0.92rem;
+  }
+  h2.skill-header{
+    font-size: 2.2rem;
+    text-align: center;
+    padding: 15px 0px 0px 0px;
+  }
+  img#html.skill-image,
+  img#javascript.skill-image,
+  img#vue.skill-image{
+    width: 50px;
+  }
+
+  img#css.skill-image{
+    width: 45px;
+  }
+
+  img#react.skill-image{
+    width: 75px;
+  }
+  img#vue.skill-image{
+    width: 45px;
+  }
+}
+
+@media only screen and (max-width: 748px){
+  p.skill-description{
+    font-size: 0.95rem;
+  }
+}
+
+@media only screen and (max-width: 735px){
+  .Projects-page-layout{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 100px;
+  }
+
+  .project-card{
+    grid-template-columns: auto;
+    grid-template-rows: 60px 190px 250px;
+    grid-template-areas:
+      "header"
+      "description"
+      "vid"; 
+  }
+  #tonedrum.project-videos{
+    width: 310px;
+    margin: 6px auto 0px auto;
+  }
+  #walkrunrideclimb.project-videos{
+    width: 390px;
+    margin: 6px auto 0px auto;
+  }
+  #ocrapp.project-videos{
+    width: 310px;
+    margin: 6px auto 0px auto;
+  }
+  /* ====CONTACT=== */
+  .Contact-page-layout{
+    grid-template-columns: 100%;
+    grid-template-rows: 70px 520px 80px 80px;
+    grid-template-areas:
+      "header"
+      "formBox"
+      "backButton"
+      "media";
+  }
+  .contact-form{
+    grid-template-columns: 1fr 580px 1fr;
+    grid-template-rows: 80px 80px 250px 90px;
+  }
+  .contact-type-writer{
+    padding-top: 15px;
+  }
+  #home.buttons {
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+  .social-icons {
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-top: 15px;
+  }
+  img#twitter{
+    width: 30px;
+    margin-bottom: 5px;
+  }
+  img#github {
+    width: 28px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    padding-bottom: 1px;
+  }
+  img#linkedin {
+    width: 30px;
+    margin-bottom: 5px;
+  }
+}
+@media only screen and (max-width: 700px){
+  .type-writer{
+    font-size: 22px;
+  }
+  p.my-self{
+    font-size: 22px;
+  }
+  p.about-me{
+    font-size: 22px;
+  }
+  p.my-projects{
+    font-size: 22px;
+  }
+  p.my-skills{
+    font-size: 22px;
+  }
+  p.my-contact{
+    font-size: 22px;
+  }
+  p.func-bracket{
+    font-size: 22px;
+  }
+  .Me-page-layout{
+    column-gap: 10px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 490px 1fr;
+    grid-template-areas:
+      "blurb image"
+      "button button";
+  }
+  #hugo {
+    width: 300px;
+    margin-left: 0px;
+  }
+  .buttons{
+    padding: 9px 15px 7px 15px;
+    margin: 24px 25px 0px 15px;
+  }
+  button#projects.buttons.function.me-button-enter-done {
+    padding-top: 10px;
+  }
+  button#skills.buttons.function.me-button-enter-done {
+    padding-top: 10px;
+  }
+  button#contact.buttons.function.me-button-enter-done {
+    padding-top: 10px;
+  }
+  #home.buttons {
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+}
+
+@media only screen and (max-width: 665px){
+  #card-resDes p.skill-description,
+  #card-react p.skill-description{
+    font-size: 0.88rem;
+  }
+}
+
+@media only screen and (max-width: 638px){
+  #card-resDes p.skill-description{
+    font-size: 0.87rem;
+  }
+  #home.buttons {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+@media only screen and (max-width: 624px){
+  #card-resDes p.skill-description{
+    font-size: 0.85rem;
+  }
+  #home.buttons {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  form.contact-form .buttons{
+    padding: 0px;
+    padding-top: 10px
+  }
+}
+
+@media only screen and (max-width: 623px){
+  .Me-page-layout{
+    column-gap: 10px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 380px 400px;
+    grid-template-areas:
+      "blurb blurb"
+      "image button";
+  }
+  #hugo {
+    width: 250px;
+    margin-left: 0px;
+  }
+  .buttons {
+    padding: 0px 0px 7px 0px;
+    margin: 0px 15px 0px 0px;
+  }
+  .me-photo{
+    margin-left: 15px;
+  }
+  p.me-type{
+    font-size: 1.9rem;
+    padding-bottom: 20px;
+  }
+  button#projects.buttons.function.me-button-enter-done {
+    padding-top: 40px;
+  }
+  button#skills.buttons.function.me-button-enter-done {
+    padding-top: 40px;
+  }
+  button#contact.buttons.function.me-button-enter-done {
+    padding-top: 40px;
+  }
+  /* CONTACT */
+  form.contact-form .buttons{
+    padding: 0px;
+    padding-top: 10px
+  }
+  #home.buttons{
+    padding: 0px;
+    padding-top: 10px
+  }
+}
+@media only screen and (max-width: 620px){
+  #card-resDes p.skill-description{
+    font-size: 0.84rem;
+  }
+}
+@media only screen and (max-width: 613px){
+  #card-resDes h2.skill-header{
+    font-size: 1.8rem;
+  }
+  h2.skill-header{
+    font-size: 1.95rem;
+  }
+  #home.buttons{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+@media only screen and (max-width: 610px){
+  .Me-page-layout{
+    column-gap: 10px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 400px 400px;
+  }
+  /* ===CONTACTS=== */
+  .Contact-page-layout{
+    grid-template-columns: 580px;
+    grid-template-rows: 70px 520px 80px 80px;
+    font-size: 1.4rem;
+  }
+  .contact-form{
+    grid-template-columns: 1fr 520px 1fr;
+    grid-template-rows: 80px 80px 250px 90px;
+    grid-template-areas:
+      ". nameBox ."
+      ". emailBox ."
+      ". msgBox ."
+      "submit submit submit";
+  }
+}
+
+@media only screen and (max-width: 598px){
+  .project-card{
+    grid-template-columns: auto;
+    grid-template-rows: 60px 180px 250px;
+    grid-template-areas:
+      "header"
+      "description"
+      "vid"; 
+  }
+  #project-card-tonedrum p.project-description{
+    padding: 0px;
+  }
+  #tonedrum.project-videos{
+    width: 310px;
+    margin: 6px auto 0px auto;
+  }
+}
+@media only screen and (max-width: 581px){
+  p.skill-description{
+    font-size: 0.87rem;
+  }
+  #card-vue p.skill-description,
+  #card-javascript p.skill-description{
+    font-size: 0.89rem;
+  }
+}
+@media only screen and (max-width: 578px){
+  /* ===HOMEPAGE=== */
+  .omit{
+    display: none;
+  }
+  /* div.my-self{
+    padding-left: 30px;
+  } */
+  .type-writer {
+    font-size: 19px;
+    text-align: start;
+  }
+  p.my-self{
+    font-size: 19px;
+    
+    margin: 0 auto 4px 0px;
+  }
+  p.about-me{
+    font-size: 19px;
+    margin: 0 auto 4px 0px;
+  }
+  p.my-projects{
+    font-size: 19px;
+    margin: 0 auto 4px 0px;
+  }
+  p.my-skills{
+    font-size: 19px;
+    margin: 0 auto 4px 0px;
+  }
+  p.my-contact{
+    font-size: 18px;
+    margin: 0 auto 4px 0px;
+  }
+  p.func-bracket{
+    font-size: 19px;
+    margin: 0px;
+    text-align: left;
+  }
+  /* The typing effect */
+  @keyframes typingLn1 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  /* typing line 2 */
+  @keyframes typingLn2 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 70%;
+    }
+  }
+  /* typing line 3 */
+  @keyframes typingLn3 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 80%;
+    }
+  }
+  /* typing line 4 */
+  @keyframes typingLn4 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 95%;
+    }
+  }
+  /* typing line 5 */
+  @keyframes typingLn5 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 95%;
+    }
+  }
+  /* typing line 6 */
+  @keyframes typingLn6 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 10%;
+    }
+  }
+  /* contact page typing */
+  @keyframes contactTyping {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  /* ===PROJECT PAGE=== */
+  .project-card{
+    grid-template-columns: auto;
+    grid-template-rows: 60px 210px 250px;
+    grid-template-areas:
+      "header"
+      "description"
+      "vid"; 
+  }
+  /* ===CONTACT=== */
+  .Contact-page-layout{
+    grid-template-columns: 560px;
+    grid-template-rows: 70px 520px 80px 80px;
+    font-size: 1.3rem;
+  }
+  .contact-form{
+    grid-template-columns: 1fr 480px 1fr;
+    grid-template-rows: 80px 80px 250px 90px;
+  }
+  input#name, input#email {
+    border-radius: 20px;
+    height: 33px;
+    width: 375px;
+    margin-top: 21px;
+    padding-left: 0px;
+    padding-top: 1px;
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 567px){
+  .Skills-page-layout{
+    grid-template-rows: 1000px 120px;
+  }
+  .skills{
+    grid-template-rows: repeat(6, 170px);
+    grid-template-areas:
+      "firstRow" 
+      "secondRow"
+      "thirdRow" 
+      "fourthRow"
+      "fifthRow" 
+      "sixthRow";
+  }
+  .single-skill{
+    grid-template-rows:45px 100px;
+  }
+  h2.skill-header{
+    font-size: 1.75rem;
+  }
+  #card-resDes h2.skill-header{
+    font-size: 1.6rem;
+  }
+  img#css.skill-image {
+    width: 32px;
+  }
+  img#react.skill-image {
+    width: 55px;
+  }
+  img#javascript.skill-image{
+    width: 43px;
+  }
+  img#vue.skill-image {
+    width: 35px;
+  }
+  img.skill-image {
+    width: 38px;
+  }
+}
+
+@media only screen and (max-width: 556px){
+  .Me-page-layout{
+    grid-template-columns: 270px 270px;
+    grid-template-rows: 410px 380px;
+  }
+  .buttons{
+    margin-top: 20px;
+  }
+  button#projects.buttons.function.me-button-enter-done {
+    padding-top: 20px;
+  }
+  button#skills.buttons.function.me-button-enter-done {
+    padding-top: 20px;
+  }
+  button#contact.buttons.function.me-button-enter-done {
+    padding-top: 20px;
+  }
+  /* =========== SKILLS ============ */
+  .Skills-page-layout{
+    grid-template-rows: 1020px 220px;
+  }
+  .single-skill{
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: 150px;
+    grid-template-areas:
+      "image description";
+  }
+  h2.skill-header{
+    display: none;
+  }
+
+  img#html.skill-image{
+    width: 120px;
+  }
+  img#css.skill-image {
+    width: 90px;
+    padding-left: 20px;
+  }
+  img#javascript.skill-image{
+    width: 110px;
+  }
+  img#react.skill-image {
+    width: 110px;
+    padding-top: 20px;
+    padding-left: 10px;
+  }
+  img#resDes.skill-image {
+    width: 90px;
+    padding-left: 10px;
+  }
+  img#vue.skill-image {
+    width: 90px;
+    padding-top: 30px;
+    padding-left: 20px;
+  }
+  div.skills-buttons {
+    grid-area: buttons;
+    /* display: flex; */
+    /* justify-content: space-evenly; */
+    justify-content: space-evenly;
+    padding: 5px 15px 25px 15px;
+    margin: 5px 25px 10px 25px;
+    display: flex;
+    flex-direction: column;
+  }
+  #projects.buttons,
+  #me.buttons,
+  #contact.buttons {
+    display: flex;
+    flex-grow: 3;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  /* ===CONTACT=== */
+  .Contact-page-layout{
+    grid-template-columns: 500px;
+    grid-template-rows: 70px 480px 70px 80px;
+    font-size: 1.2rem;
+  }
+  .contact-form{
+    grid-template-columns: 1fr 420px 1fr;
+    grid-template-rows: 70px 70px 250px 90px;
+  }
+  .contact-type-writer {
+    font-size: 30px;
+  }
+  input#name{
+    margin-top: 15px;
+    margin-left: 25px;
+    width: 305px;
+  }
+  input#email{
+    margin-top: 15px;
+    margin-left: 16px;
+    width: 305px;
+  }
+}
+
+@media only screen and (max-width: 538px){
+  .Me-page-layout{
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 410px 370px;
+  }
+  p.me-type{
+    font-size: 1.85rem;
+  }
+  /* ===SKILLS==== */
+  p.skill-description {
+    font-size: 0.92rem;
+}
+}
+
+@media only screen and (max-width: 530px){
+  .Me-page-layout {
+    grid-template-rows: 400px 328px;
+  }
+  #hugo{
+    width: 237px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 5px;
+  }
+  p.me-type{
+    font-size: 1.7rem;
+  }
+  button#projects.buttons.function.me-button-enter-done,
+  button#skills.buttons.function.me-button-enter-done,
+  button#contact.buttons.function.me-button-enter-done{
+    padding-top: 10px;
+    margin-bottom: 25px;
+  }
+
+  .buttons{
+    font-size: 1.5rem;
+    margin-top: 0px;
+  }
+  /* ====SKILLS======= */
+  .Skills-page-layout{
+    grid-template-rows: 1050px 90px;
+  }
+  .skills{
+    grid-template-rows: repeat(6, 180px);
+  }
+  .Skills-page-layout{
+    grid-template-rows: 1075px 220px;
+  }
+}
+@media only screen and (max-width: 513px){
+  #card-resDes p.skill-description {
+    font-size: 0.82rem;
+  }
+  #hugo {
+    width: 225px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+  }
+}
+@media only screen and (max-width: 505px){
+  #card-resDes p.skill-description {
+    font-size: 0.8rem;
+  }
+  #card-react p.skill-description {
+    font-size: 0.83rem;
+  }
+  #card-javascript p.skill-description {
+    font-size: 0.85rem;
+  }
+}
+
+@media only screen and (max-width: 511px){
+  .Me-page-layout{
+    grid-template-rows: 390px 370px;
+  }
+  p.me-type{
+    font-size: 1.65rem;
+  }
+}
+
+@media only screen and (max-width: 493px){
+  .project-card{
+    grid-template-columns: auto;
+    grid-template-rows: 60px 240px 250px;
+    grid-template-areas:
+      "header"
+      "description"
+      "vid"; 
+  }
+  p.me-type{
+    font-size: 1.65rem;
+  }
+}
+@media only screen and (max-width: 483px){
+  p.skill-description {
+    font-size: 0.83rem;
+  }
+  #card-react p.skill-description {
+    font-size: 0.79rem;
+  }
+  #card-vue p.skill-description, #card-javascript p.skill-description {
+    font-size: 0.82rem;
+  }
+  #card-resDes p.skill-description {
+    font-size: 0.75rem;
+  }
+   /* ===CONTACT=== */
+   .Contact-page-layout{
+    grid-template-columns: 470px;
+    grid-template-rows: 70px 510px 70px 80px;
+    font-size: 1.2rem;
+  }
+  .contact-form{
+    grid-template-columns: 1fr 390px 1fr;
+    grid-template-rows: 86px 86px 250px 85px;
+    }
+
+  input#name{
+    margin-top: 15px;
+    margin-left: 25px;
+    width: 305px;
+  }
+  input#email{
+    margin-top: 15px;
+    margin-left: 16px;
+    width: 305px;
+  }
+  #hugo {
+    width: 210px;
+    margin-top: 10px;
+  }
+}
+@media only screen and (max-width: 472px){
+  p.me-type {
+    font-size: 1.6rem;
+  }
+}
+@media only screen and (max-width: 460px){
+  .Projects-page-layout{
+    grid-template-columns: 440;
+    grid-template-rows: 1fr 290px;
+  }
+  .project-card{
+    grid-template-columns: 400px;
+    grid-template-rows: 60px auto 280px;
+    grid-template-areas:
+      "header"
+      "description"
+      "vid"; 
+  }
+  #tonedrum.project-videos {
+    width: 350px;
+    margin-left: 30px;
+  }
+  #walkrunrideclimb.project-videos {
+    width: 350px;
+    margin-left: 32px;
+    margin-top: 35px;
+  }
+  #ocrapp.project-videos {
+    width: 350px;
+    margin-left: 32px;
+  }
+
+  div.project-buttons{
+    display: flex;
+    flex-direction: column;
+  }
+  button#me.buttons.function.project-button-enter-done {
+    display: flex;
+    margin: 10px 20px auto 19px;
+  }
+  button#skills.buttons.function.project-button-enter-done {
+    display: flex;
+    margin: 10px 20px auto 19px;
+    padding-top: 10px;
+  }
+  button#contact.buttons.function.project-button-enter-done {
+    display: flex;
+    margin: 10px 20px auto 19px;
+  }
+  .buttons {
+    padding: 0px 0px 7px 0px;
+    margin: 0px 15px 0px 0px;
+  }
+  p.me-type{
+    font-size: 1.55rem;
+  }
+  /* ====SKILLS======= */
+  .Skills-page-layout{
+    grid-template-rows: 1280px 90px;
+  }
+  .skills{
+    grid-template-rows: repeat(6, 200px);
+  }
+  #card-javascript p.skill-description {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  /* ===CONTACT=== */
+  .Contact-page-layout{
+  grid-template-columns: 440px;
+  grid-template-rows: 70px 540px 70px 80px;
+  font-size: 1.2rem;
+}
+.contact-form{
+  grid-template-columns: 1fr 350px 1fr;
+  grid-template-rows: 100px 100px 250px 90px;
+  }
+  #hugo{
+    width: 205px;
+  }
+}
+@media only screen and (max-width: 440px){
+  .Me-page-layout{
+    grid-template-rows: 410px 320px;
+  }
+  p.me-type{
+    font-size: 1.55rem;
+  }
+  #hugo{
+    width: 200px;
+  }
+  /* === PROJECT ==== */
+  .Projects-page-layout{
+    grid-template-columns: 430;
+    grid-template-rows: 1fr 290px;
+  }
+  .project-card{
+    grid-template-columns: 380px;
+    grid-template-rows: 60px auto 260px;
+  }
+  #tonedrum.project-videos {
+    width: 310px;
+    margin: 14px auto 0px auto;
+  }
+  #walkrunrideclimb.project-videos {
+    width: 360px;
+    margin-left: auto;
+    margin-top: 20px;
+  }
+  #ocrapp.project-videos {
+    width: 310px;
+    margin-left: 30px;
+  }
+}
+@media only screen and (max-width: 435px){
+  .Skills-page-layout{
+    grid-template-rows: 1200px 240px;
+  }
+  #card-javascript p.skill-description {
+    font-size: 0.77rem;
+  }
+  #card-vue p.skill-description{
+    font-size: 0.79rem;
+  }
+  #card-resDes p.skill-description {
+    font-size: 0.72rem;
+  }
+}
+
+@media only screen and (max-width: 429px){
+  .Me-page-layout {
+    grid-template-rows: 388px 320px;
+  }
+  p.me-type {
+    font-size: 1.5rem;
+  }
+  #hugo{
+    width: 180px;
+  }
+}
+
+@media only screen and (max-width: 418px){
+  #card-javascript p.skill-description{
+    font-size: 0.74rem;
+  }
+  #card-react p.skill-description{
+    font-size: 0.74rem;
+  }
+  #card-resDes p.skill-description{
+    font-size: 0.67rem;
+  }
+  #card-vue p.skill-description,
+  #card-html p.skill-description,
+  #card-css p.skill-description{
+    font-size: 0.75rem;
+  }
+}
+@media only screen and (max-width: 412px){
+  .type-writer {
+    font-size: 18px;
+    text-align: start;
+  }
+  p.my-self{
+    font-size: 16px;
+    
+    margin: 0 auto 4px 0px;
+  }
+  p.about-me{
+    font-size: 18px;
+    margin: 0 auto 4px 0px;
+  }
+  p.my-projects{
+    font-size: 18px;
+    margin: 0 auto 4px 0px;
+  }
+  p.my-skills{
+    font-size: 18px;
+    margin: 0 auto 4px 0px;
+  }
+  p.my-contact{
+    font-size: 17px;
+    margin: 0 auto 4px 0px;
+  }
+  p.func-bracket{
+    font-size: 18px;
+    margin: 0px;
+    text-align: left;
+  }
+  /* ===CONTACT=== */
+  .Contact-page-layout{
+    grid-template-columns: 400px;
+    font-size: 1.2rem;
+  }
+  .contact-form{
+    grid-template-columns: 1fr 290px 1fr;
+    grid-template-rows: 100px 100px 250px 90px;
+  }
+  input#name, input#email {
+    margin-top: 15px;
+    margin-left: 0px;
+    width: 285px;
+  }
+}
+
+@media only screen and (max-width: 405px){
+  .Me-page-layout{
+    grid-template-rows: 388px 320px;
+  }
+  .Projects-page-layout{
+    grid-template-columns: 390;
+    grid-template-rows: 1fr 290px;
+  }
+  .project-card{
+    grid-template-columns: 370px;
+    grid-template-rows: 60px auto 260px;
+  }
+  p.project-description{
+    font-size: 1.1rem;
+  }
+  #card-vue p.skill-description,
+  #card-react p.skill-description,
+  #card-javascript p.skill-description{
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (max-width: 398px){
+  #card-javascript p.skill-description{
+    font-size: 0.71rem;
+  }
+  #card-react p.skill-description{
+    font-size: 0.7rem;
+  }
+  #card-vue p.skill-description{
+    font-size: 0.69rem;
+  }
+  #card-resDes p.skill-description{
+    font-size: 0.66rem;
+  }
+}
+
+@media only screen and (max-width: 395px){
+  .Projects-page-layout{
+    grid-template-columns: 370;
+    grid-template-rows: 1fr 290px;
+  }
+  .project-card{
+    grid-template-columns: 350px;
+    grid-template-rows: 60px auto 260px;
+  }
+
+  #walkrunrideclimb.project-videos {
+    width: 340px;
+    margin-left: auto;
+    margin-top: 30px;
+  }
+  #ocrapp.project-videos {
+    width: 310px;
+    margin-left: 20px;
+  }
+  /* ===CONTACT=== */
+  .Contact-page-layout{
+    grid-template-columns: 380px;
+    font-size: 1.1rem;
+  }
+  .contact-form{
+    grid-template-columns: 1fr 270px 1fr;
+  }
+  .contact-type-writer {
+    font-size: 25px;
+  }
+  input#name, input#email {
+    margin-top: 15px;
+    margin-left: 0px;
+    width: 255px;
+  }
+  p.me-type{
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 387px){
+  .Me-page-layout{
+    grid-template-columns: 170px 170px;
+  }
+  .Me-page-layout{
+    grid-template-rows: 388px 266px;
+  }
+  #card-react p.skill-description{
+    font-size: 0.67rem;
+  }
+  #card-javascript p.skill-description{
+    font-size: 0.67rem;
+  }
+  #hugo{
+    width: 166px;
+  }
+  p.me-type{
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 380px){
+  #hugo {
+    width: 157px;
+  }
+  /* div.me-page-buttons.buttons{
+    margin-left: 24px;
+  } */
+
+  .Projects-page-layout{
+    grid-template-columns: 350;
+  }
+  .project-card{
+    grid-template-columns: 340px;
+  }
+  p.project-description{
+    font-size: 1rem;
+  }
+  #project-card-tonedrum p.project-description{
+    font-size: 1rem;
+  }
+  h2.project-header{
+    font-size: 32px;
+    margin-top: 14px;
+  }
 }

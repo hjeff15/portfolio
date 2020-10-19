@@ -30,10 +30,10 @@ const mySkills = {
         id: "resDes"
     },
     p5:{
-        name:"P5.js",
-        description:"p5.js is a JavaScript library for creative coding, with a focus on making coding accessible and inclusive for artists, designers, educators, beginners, and anyone else! p5. js is free and open-source because we believe software, and the tools to learn it, should be accessible to everyone.",
-        image:"/images/p5.png",
-        id: "p5"
+        name:"Vue",
+        description:"Vue.js (pronounced /vjuː/, like view) is a library for building interactive web interfaces. The goal of Vue. js is to provide the benefits of reactive data binding and composable view components with an API that is as simple as possible.",
+        image:"/images/vue.png",
+        id: "vue"
     }
 }
 

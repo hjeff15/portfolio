@@ -9,7 +9,7 @@ import mySkills from "../skillsList";
 class Skills extends React.Component{
   state = {
     mySkills,
-    view: false
+    visible: false
   };
 
   constructor(){
@@ -35,7 +35,7 @@ class Skills extends React.Component{
 
   componentDidMount(){
     this.setState({
-      view:true
+      visible:true
     })
   }
 
@@ -44,13 +44,13 @@ class Skills extends React.Component{
       <div className="Skills-page-layout">
         <ul className="skills">
           {Object.keys(this.state.mySkills).map(key => 
-          <Skill key={key} details={this.state.mySkills[key]} view={this.state.view}/>)}
+          <Skill key={key} details={this.state.mySkills[key]} view={this.state.visible}/>)}
         </ul>
         <div className="skills-buttons">
           {/* Buttons not yet passed their prop , like in the ME component/pageŸ */}
-          <Button name="projects" view={this.state.view} changePage={this.changePage} buttonClassProp={this.buttonClassProp}/>
-          <Button name="me" view={this.state.view} changePage={this.changePage} buttonClassProp={this.buttonClassProp}/>
-          <Button name="contact" view={this.state.view} changePage={this.changePage} buttonClassProp={this.buttonClassProp}/>
+          <Button name="projects" view={this.state.visible} changePage={this.changePage} buttonClassProp={this.buttonClassProp}/>
+          <Button name="me" view={this.state.visible} changePage={this.changePage} buttonClassProp={this.buttonClassProp}/>
+          <Button name="contact" view={this.state.visible} changePage={this.changePage} buttonClassProp={this.buttonClassProp}/>
         </div>
 
       </div> 

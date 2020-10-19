@@ -12,13 +12,13 @@ class Skill extends React.Component{
         return (
             <CSSTransition
             in={this.props.view} 
-            timeout={{enter: 1000, exit:2000}}
+            timeout={{enter: 1000, exit:1000}}
             classNames="skill-card"
             unmountOnExit
             >
                 <li className={this.skillClassName} id={this.skillId}>
                     <img className="skill-image" id={this.props.details.id} src={this.props.details.image} alt={this.props.details.name}/>
-                    <h2 className="skill-header">{this.props.details.name.toUpperCase()}</h2>
+                    <h2 className="skill-header function-name">{this.props.details.name.toUpperCase()}</h2>
                     <p className="skill-description">{this.props.details.description}</p>
                 </li>
             </CSSTransition>

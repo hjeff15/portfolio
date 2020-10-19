@@ -31,7 +31,7 @@ class Me extends React.Component{
     },1000)
   }
 
-  buttonClassProp = "me-bottom";
+  buttonClassProp = "me-button";
 
   componentDidMount(){
     this.setState({
@@ -39,19 +39,15 @@ class Me extends React.Component{
     })
   }
 
-  componentWillUnmount(){
-    console.log("Me is is unmounting");
-  }
-
   render(){
 
     return (
       <div className="Me-page-layout">
         <CSSTransition in={this.state.visible} timeout={{enter: 1000, exit:1000}} classNames="me-left" unmountOnExit>
-          <div>
+          <div className="me-text-and-type">
             <main className="me-text">
               <p className="me-type">
-                Hi! I’m Hugo and I’m a front end developer. I’m interested in making web applications which are great fun to use! I’m always working on something and I try to upload all the code to my GitHub account. See the details below if you’re interested.
+              Hi! I’m Hugo and I’m a front end developer. I love designing and developing great web applications which are fun to use! If you want a responsive website built for an optimal user experience that can achieve your business goals, you’re in the right place! 
               </p>
             </main>
           </div>  
@@ -61,7 +57,7 @@ class Me extends React.Component{
             <img id="hugo" src={hugo} alt="This is me"/>
           </div>
         </CSSTransition>
-        <div className="buttons">
+        <div className="me-page-buttons buttons">
           <Button name="projects" view={this.state.visible} changePage={this.changePage} buttonClassProp={this.buttonClassProp}/>
           <Button name="skills" view={this.state.visible} changePage={this.changePage} buttonClassProp={this.buttonClassProp}/>
           <Button name="contact" view={this.state.visible} changePage={this.changePage} buttonClassProp={this.buttonClassProp}/>
