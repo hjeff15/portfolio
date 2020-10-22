@@ -26,7 +26,7 @@ const mySkills = {
     responsiveDesign:{
         name:"Responsive Web Design",
         description:"Responsive web design (RWD) is an approach to web design that makes web pages render well on a variety of devices and window or screen sizes. ... Responsive layouts automatically adjust and adapt to any device screen size, whether it is a desktop, a laptop, a tablet, or a mobile phone.",
-        image:"/images/css.png",
+        image:"/images/resDes.png",
         id: "resDes"
     },
     p5:{

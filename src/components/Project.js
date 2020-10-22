@@ -20,7 +20,7 @@ class Project extends React.Component{
     render(){
         return (
             <CSSTransition in={this.props.view} 
-            timeout={{enter: 1000, exit: 1000}}
+            timeout={{enter: 2000, exit: 1000}}
             classNames="projects"
             unmountOnExit>
                 <div className="project-card" id={this.projectCardId}>

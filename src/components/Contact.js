@@ -3,30 +3,49 @@ import React from "react";
 import { CSSTransition } from "react-transition-group";
 
 import Button from "./Button";
+import Thanks from "./Thanks";
 
 import twitter from "../assets/Twitter.png";
 import github from "../assets/GitHub.png";
 import linkedin from "../assets/Linkedin.png";
 
 import emailjs from "emailjs-com";
-
-// emailjs.init("user_ajk4YlUQa2dS6KxG5UfgG");
+import emailJsSettings from "../config";
 
 class Contact extends React.Component {
+  constructor(){
+    super();
+    this.messageMe = this.messageMe.bind(this);
+  }
   state = {
+    emailJsSettings,
     visible: false,
+    buttonVisible: false,
+    thanksVisible: false
   };
+
   buttonClassProp = "home-button";
 
   messageMe = (e) => {
+    const serviceID = this.state.emailJsSettings["serviceID"];
+    const contactForm = this.state.emailJsSettings["templateID"];
+    const userID = this.state.emailJsSettings["userID"];
     e.preventDefault();
+    e.nativeEvent.stopImmediatePropagation();
 
     emailjs
-      .sendForm("gmail", "contact_form", e.target, "user_ajk4YlUQa2dS6KxG5UfgG")
+      .sendForm(serviceID, contactForm, e.target, userID)
       .then(
         (result) => {
-          console.log(result.text);
-          alert("Thanks for contacting me!");
+          this.setState({
+            visible: false,
+            buttonVisible: true,
+            thanksVisible: true
+          });
+          setTimeout(() => {
+            document.getElementById("contact-form").style.display = "none";
+          }, 1000);
+          window.scrollTo(0, 0);
         },
         (error) => {
           console.log(error.text);
@@ -47,7 +66,9 @@ class Contact extends React.Component {
   componentDidMount() {
     this.setState({
       visible: true,
+      buttonVisible: true
     });
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -79,7 +100,7 @@ class Contact extends React.Component {
           </div>
         </CSSTransition>
 
-        <form className='contact-form' onSubmit={this.messageMe}>
+        <form id="contact-form" className='contact-form' onSubmit={this.messageMe}>
           <CSSTransition
             in={this.state.visible}
             timeout={{ enter: 1000, exit: 1000 }}
@@ -142,14 +163,15 @@ class Contact extends React.Component {
             classNames='submit-button'
             unmountOnExit
           >
-            <button className='contact-button buttons function' type='submit'>
+            <button id="submit-details" className='contact-button buttons function' type='submit'>
               submit
             </button>
           </CSSTransition>
         </form>
+        <Thanks view={this.state.thanksVisible}/>
         <div className='back-button'>
           <Button
-            view={this.state.visible}
+            view={this.state.buttonVisible}
             name='home'
             buttonClassProp={this.buttonClassProp}
             changePage={this.changePage}

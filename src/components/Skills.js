@@ -36,7 +36,8 @@ class Skills extends React.Component{
   componentDidMount(){
     this.setState({
       visible:true
-    })
+    });
+    window.scrollTo(0, 0);
   }
 
   render(){

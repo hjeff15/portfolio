@@ -5,14 +5,11 @@ class Skill extends React.Component{
     skillClassName = `single-skill single-skill-${this.props.details.name}`;
     skillId = `card-${this.props.details.id}`
 
-    componentDidMount(){
-        console.log("SKILL mounted")
-    }
     render(){
         return (
             <CSSTransition
             in={this.props.view} 
-            timeout={{enter: 1000, exit:1000}}
+            timeout={{enter: 2000, exit:2000}}
             classNames="skill-card"
             unmountOnExit
             >

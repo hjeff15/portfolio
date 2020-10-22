@@ -39,6 +39,7 @@ class Projects extends React.Component{
     this.setState({
       visible: true
     })
+    window.scrollTo(0, 0);
   }
 
   render(){

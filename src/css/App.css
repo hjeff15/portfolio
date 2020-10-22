@@ -17,11 +17,11 @@ html {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
   box-sizing: border-box;
-  height: 90vh;
+  height: 100vh;
   column-gap: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 40% 60%;
   grid-template-areas:
     "blurb image"
     "button image";
@@ -32,11 +32,11 @@ html {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
   box-sizing: border-box;
-  height: 88vh;
+  height: 100vh;
   column-gap: 10px;
   display: grid;
-  grid-template-rows: 660px 140px;
-  column-gap: 10px;
+  grid-template-rows: 790px 120px;
+  /* column-gap: 10px; */
   grid-template-areas:
     "main"
     "buttons";
@@ -47,9 +47,9 @@ html {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
   color: white;
-  height: 90vh;
+  height: 100vh;
   display: grid;
-  grid-template-rows: 650px 160px;
+  grid-template-rows: 660px 150px;
   grid-template-areas:
     "main"
     "buttons";
@@ -60,16 +60,24 @@ html {
     monospace;
   color: white;
   text-align: center;
-  min-height: 98vh;
+  min-height: 100vh;
   /* align-items: center; */
   font-size: 1.5rem;
   display: grid;
-  grid-template-columns: 1fr 800px 1fr;
-  grid-template-rows: 100px 540px 80px;
+  grid-template-columns: 1fr 1000px 1fr;
+  grid-template-rows: 140px 480px 100px;
   grid-template-areas:
     ". header ."
     ". formBox media"
     ". backButton .";
+}
+/* ===THANKS CONTAINER=== */
+div.thanks-container{
+  grid-area: formBox;
+}
+h2.envelope{
+  transform: scale(1.9);
+  margin: 60px 0px 60px 0px;
 }
 
 /* ====================================== */
@@ -96,8 +104,8 @@ html {
 .contact-form {
   grid-area: formBox;
   display: grid;
-  grid-template-columns: 1fr 500px 1fr;
-  grid-template-rows: 90px 90px 250px 100px;
+  grid-template-columns: 1fr 600px 1fr;
+  grid-template-rows: 70px 70px 220px 120px;
   grid-template-areas:
     ". nameBox ."
     ". emailBox ."
@@ -106,11 +114,12 @@ html {
 }
 .contact-name {
   grid-area: nameBox;
-  display: flex;
 }
 .contact-email {
   grid-area: emailBox;
-  display: flex;
+}
+textarea#message{
+  margin-top: 10px;
 }
 input#name {
   width: 375px;
@@ -162,6 +171,14 @@ button.contact-button {
 #home {
   flex-grow: 1;
 }
+.back-button > button#home{
+  margin-left: 211px;
+  margin-right: 218px;
+  padding-top: 26px;
+}
+button#submit-details{
+  padding-top: 19px;
+}
 
 .social-icons {
   grid-area: media;
@@ -188,10 +205,11 @@ img#github {
 
 /* ====================== ME PAGE ============ */
 #hugo {
-  width: 530px;
-  /* object-fit: contain; */
+  width: 510px;
   border-radius: 20px;
   margin-left: 50px;
+  margin-top: 70px;
+  margin-right: 20px;
 }
 .me-photo {
   grid-area: image;
@@ -210,16 +228,13 @@ img#github {
   animation: typingLn1 1.5s steps(30, end), blink-caret 0.75s step-end 2;
 }
 
-.me-type {
+p.me-type {
   grid-area: blurb;
   border: 1px solid white;
   border-radius: 20px;
   color: orange;
-  font-size: 29px;
   /* letter-spacing: .15em;  */
-}
-p.me-type {
-  font-size: 27px;
+  font-size: 1.7rem;
   padding: 10px 20px 20px 50px;
   margin-bottom: 0px;
 }
@@ -231,7 +246,7 @@ p.me-type {
   flex-direction: column;
   border: none;
   background-color: transparent;
-  padding: 15px 15px 15px 15px;
+  padding: 35px 15px 15px 15px;
   margin: 0px 25px 5px 15px;
   color: white;
   font-size: 2rem;
@@ -246,16 +261,20 @@ div.skills-buttons {
   grid-area: buttons;
   display: flex;
   justify-content: space-evenly;
-  padding: 5px 15px 25px 15px;
-  margin: 5px 25px 35px 25px;
+  padding: 5px 15px 35px 15px;
+  margin: 5px 25px 17px 25px;
 }
 div.project-buttons {
   grid-area: buttons;
   display: flex;
   justify-content: space-evenly;
-  padding: 5px 15px 25px 15px;
-  margin: 5px 25px 10px 25px;
+  /* padding: 5px 15px 25px 15px; */
+  /* margin: 5px 25px 10px 25px; */
 }
+/* div.project-buttons .buttons{
+  display: block;
+  padding: 10px 10px 10px 10px;
+} */
 #projects.buttons {
   display: flex;
   flex-grow: 3;
@@ -288,8 +307,9 @@ div.project-buttons {
   display: flex;
   flex-flow: row;
   align-items: stretch;
-  height: 90vh;
+  height: 100vh;
   padding: 0px;
+  margin-top: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 220px 220px 220px;
@@ -321,13 +341,15 @@ h2.skill-header {
   padding: 20px 0px 0px 50px;
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: 2.2rem;
+  font-size: 2.9rem;
 }
 #card-resDes h2.skill-header{
-  font-size: 1.7rem;
+  font-size: 2.4rem;
+  padding: 20px 0px 0px 0px;
 }
 p.skill-description {
   grid-area: description;
+  font-size: 1rem;
   margin-top: 0px;
   padding: 0px 10px 0px 10px;
 }
@@ -353,6 +375,18 @@ img#html.skill-image {
   padding-left: 8px;
   padding-top: 5px;
 }
+img#resDes.skill-image{
+  width: 60px;
+  background-color: white;
+  border-radius: 20px 0 0 0;
+  padding-top: 2px;
+}
+div.skills-buttons > button#projects.buttons, 
+div.skills-buttons > button#me.buttons, 
+div.skills-buttons > button#contact.buttons {
+  margin-top: 0px;
+  padding-top: 20px;
+}
 
 /* ========================================= */
 
@@ -364,7 +398,7 @@ img#html.skill-image {
   grid-area: main;
   display: grid;
   grid-template-columns: 320px 1fr;
-  grid-template-rows: 60px 140px;
+  grid-template-rows: 60px minmax(170px, auto);
   grid-template-areas:
     "vid  header"
     "vid description";
@@ -376,15 +410,18 @@ img#html.skill-image {
 }
 
 .project-videos {
+  display: flex;
   width: 264px;
   border-radius: 30px;
   grid-area: vid;
 }
 #walkrunrideclimb.project-videos {
+  display: flex;
   margin-top: 28px;
   margin-left: 10px;
 }
 #tonedrum.project-videos {
+  display: flex;
   width: 240px;
   margin-top: 11px;
   margin-left: 18px;
@@ -411,7 +448,8 @@ h2.project-header {
 
 p.project-description {
   margin: 0px;
-  padding-right: 20px;
+  padding-right: 25px;
+  font-size: 1.2rem;
 }
 
 /* =================MENU PAGE STYLES =============== */
@@ -702,12 +740,10 @@ p.func-bracket {
 
 .skills-button-enter {
   opacity: 0;
-  transform: translateX(150%);
 }
 .skills-button-enter-active {
   opacity: 1;
-  transform: translateX(0%);
-  transition: 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 5000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .skills-button-enter-done {
   border-radius: 20px;
@@ -731,11 +767,9 @@ p.func-bracket {
 
 .skills-button-exit {
   opacity: 1;
-  transform: translateY(0%);
 }
 .skills-button-exit-active {
   opacity: 0;
-  transform: translateY(100%);
   transition: all 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -867,19 +901,19 @@ p.func-bracket {
 
 /* ======SKILLS PAGE TRANSITIONS ===== */
 #card-html.skill-card-enter {
-  transform: translateY(-200%);
+  transform: translateX(-200%);
 }
 #card-html.skill-card-enter-active {
-  transform: translateY(0%);
+  transform: translateX(0%);
   transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
 #card-html.skill-card-exit {
   opacity: 1;
-  transform: translateY(0%);
+  transform: translateX(0%);
 }
 #card-html.skill-card-exit-active {
   opacity: 0;
-  transform: translateY(-200%);
+  transform: translateX(-200%);
   transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
 
@@ -888,7 +922,7 @@ p.func-bracket {
 }
 #card-javascript.skill-card-enter-active {
   transform: translateX(0%);
-  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  transition: 1500ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
 #card-javascript.skill-card-exit {
   opacity: 1;
@@ -897,40 +931,40 @@ p.func-bracket {
 #card-javascript.skill-card-exit-active {
   opacity: 0;
   transform: translateX(-200%);
-  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  transition: 1500ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
 
 #card-resDes.skill-card-enter {
-  transform: translateY(200%);
+  transform: translateX(-200%);
 }
 #card-resDes.skill-card-enter-active {
-  transform: translateY(0%);
-  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  transform: translateX(0%);
+  transition: 2000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
 #card-resDes.skill-card-exit {
   opacity: 1;
-  transform: translateY(0%);
+  transform: translateX(0%);
 }
 #card-resDes.skill-card-exit-active {
   opacity: 0;
-  transform: translateY(200%);
-  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  transform: translateX(-200%);
+  transition: 2000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
 
 #card-css.skill-card-enter {
-  transform: translateY(-200%);
+  transform: translateX(200%);
 }
 #card-css.skill-card-enter-active {
-  transform: translateY(0%);
+  transform: translateX(0%);
   transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
 #card-css.skill-card-exit {
   opacity: 1;
-  transform: translateY(0%);
+  transform: translateX(0%);
 }
 #card-css.skill-card-exit-active {
   opacity: 0;
-  transform: translateY(-200%);
+  transform: translateX(200%);
   transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
 
@@ -939,7 +973,7 @@ p.func-bracket {
 }
 #card-react.skill-card-enter-active {
   transform: translateX(0%);
-  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  transition: 1500ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
 #card-react.skill-card-exit {
   opacity: 1;
@@ -948,24 +982,24 @@ p.func-bracket {
 #card-react.skill-card-exit-active {
   opacity: 0;
   transform: translateX(200%);
-  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  transition: 1500ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
 
 #card-vue.skill-card-enter {
-  transform: translateY(200%);
+  transform: translateX(200%);
 }
 #card-vue.skill-card-enter-active {
-  transform: translateY(0%);
-  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  transform: translateX(0%);
+  transition: 2000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
 #card-vue.skill-card-exit {
   opacity: 1;
-  transform: translateY(0%);
+  transform: translateX(0%);
 }
 #card-vue.skill-card-exit-active {
   opacity: 0;
-  transform: translateY(200%);
-  transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  transform: translateX(200%);
+  transition: 2000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
 
 /* ====== PROJECTS PAGE TRANSITIONS ===== */
@@ -1034,6 +1068,15 @@ p.func-bracket {
   transform: translateX(0%);
   transition: all 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
+.submit-name-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.submit-name-exit-active {
+  opacity: 0;
+  transform: translateX(-200%);
+  transition: all 800ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
 
 .submit-email-enter {
   opacity: 0;
@@ -1044,6 +1087,15 @@ p.func-bracket {
   transform: translateX(0%);
   transition: all 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
 }
+.submit-email-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.submit-email-exit-active {
+  opacity: 0;
+  transform: translateX(200%);
+  transition: all 800ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+}
 
 .submit-text-enter {
   opacity: 0;
@@ -1052,11 +1104,34 @@ p.func-bracket {
   opacity: 1;
   transition: opacity 1000ms ease-in-out;
 }
+.submit-text-exit {
+  opacity: 1;
+}
+.submit-text-exit-active {
+  opacity: 0;
+  transition: opacity 800ms ease-in-out;
+}
 
 .contact-socials-enter {
   opacity: 0;
 }
 .contact-socials-enter-active {
+  opacity: 1;
+  transition: opacity 2000ms ease-in-out;
+}
+.contact-socials-exit {
+  opacity: 1;
+}
+.contact-socials-exit-active {
+  opacity: 0;
+  transition: opacity 800ms ease-in-out;
+}
+
+
+.thanks-enter{
+  opacity: 0;
+}
+.thanks-enter-active{
   opacity: 1;
   transition: opacity 2000ms ease-in-out;
 }
@@ -1083,84 +1158,165 @@ p.func-bracket {
 }
 
 /* ======================================= MEDIA QUIERIES =================================== */
+@media only screen and (max-width: 1258px){
+  #card-resDes h2.skill-header{
+    font-size: 2.1rem;
+  }
+  p.skill-description{
+    font-size: 0.9rem;
+  }
+  /* ===ME=== */
+  .Me-page-layout{
+    grid-template-rows: 1fr 1fr;
+  }
+  #hugo{
+    width: 500px;
+    margin-top: 20px;
+  }
+  p.me-type{
+    font-size: 1.7rem;
+  }
+  /* ===PROJECTS=== */
+  .Projects-page-layout{
+    grid-template-rows: 1200px 120px;
+  }
+  .project-card{
+    grid-template-columns: 320px 1fr;
+    grid-template-rows: 90px minmax(270px, auto);
+  }
+  #tonedrum.project-videos {
+    width: 280px;
+    margin-top: 75px;
+  }
+  #walkrunrideclimb.project-videos {
+    width: 295px;
+    margin-top: 75px;
+  }
+  #ocrapp.project-videos {
+    width: 290px;
+    margin-top: 67px;
+    margin-left: 18px;
+  }
+  p.project-description {
+    /* margin: 0px; */
+    /* padding-right: 25px; */
+    font-size: 1.5rem;
+    overflow: auto;
+  }
+  /* ===CONTACT=== */
+  .Contact-page-layout{
+    grid-template-columns: 1fr 700px 1fr;
+  }
+  .back-button > button#home{
+    margin-left: 72px;
+    margin-right: 72px;
+  }
+}
 
 @media only screen and (max-width: 1197px) {
-
   /* ME PAGE */
   .Me-page-layout{
     column-gap: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     grid-template-areas:
       "blurb image"
       "button image";
   }
   #hugo{
-    width: 480px;
-    margin-top: 20px;
+    width: 500px;
+    /* margin-top: 50px; */
+    margin-right: 20px;
   }
   p.me-type{
-    font-size: 26px;
+    font-size: 1.58rem;
   }
   /* PROJECT */
   .Projects-page-layout{
-    grid-template-rows: 655px 140px;
     column-gap: 5px;
   }
   .project-card{
     grid-template-columns: 320px 1fr;
-    grid-template-rows: 60px 140px;
+    grid-template-rows: 60px minmax(300px, auto);
     grid-template-areas:
       "vid  header"
       "vid description";
     margin: 15px 120px 23px 120px;
   }
-  p.project-description{
-    font-size: 15px;
-  }
+  /* ===SKILL=== */
   h2.skill-header{
     font-size: 2.1rem;
   }
 }
+@media only screen and (max-width: 1127px){
+  #card-resDes h2.skill-header{
+    font-size: 1.9rem;
+  }
+  p.project-description{
+    font-size: 1.4rem;
+  }
+}
 @media only screen and (max-width: 1098px){
-  #project-card-tonedrum p.project-description{
-    font-size: 14px;
+  p.me-type {
+    font-size: 1.6rem;
+  }
+  p.skill-description{
+    font-size: 0.9rem;
   }
 }
 
 @media only screen and (max-width: 1068px) {
-
   /* ME PAGE */
   .Me-page-layout{
     column-gap: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-      "blurb image"
+      "blurb blurb"
       "button image";
   }
+  div.me-page-buttons.buttons{
+    grid-area: button;
+  }
   #hugo{
-    width: 400px;
-    margin-top: 90px;
+    width: 380px;
+    margin-top: 30px;
     margin-right: 40px;
+    margin-left: 0px;
+  }
+  div.me-text-and-type {
+    grid-area: blurb;
+    /* margin-top: 60px; */
+    margin-right: 10px;
   }
   p.me-type{
-    font-size: 25px;
+    font-size: 2.2rem;
+    text-align: center;
   }
-    /* ===CONTACT=== */
-    .Contact-page-layout{
-      grid-template-columns: 1fr 700px 1fr;
-      grid-template-rows: 100px 520px 80px;
-    }
-    .contact-form{
-      grid-template-columns: 1fr 500px 1fr;
-      grid-template-rows: 80px 80px 250px 100px;
-    }
-    #home.buttons {
-      margin-left: 117px;
-      margin-right: 128px;
+  /* ===CONTACT=== */
+  #home.buttons {
+    margin-left: 117px;
+    margin-right: 128px;
+  }
+  .Contact-page-layout{
+    grid-template-columns: 1fr 600px 1fr;
+  }
+  .back-button > button#home{
+    margin-left: 15px;
+    margin-right: 23px;
+  }
+  .social-icons{
+    align-items: center;
+  }
+  /* == SKILLS === */
+  #card-resDes h2.skill-header{
+    font-size: 1.8rem;
+  }
+  /* ===PROJECTS=== */
+  p.project-description{
+    font-size: 1.3rem;
   }
 }
 
@@ -1172,85 +1328,66 @@ p.func-bracket {
   #card-resDes h2.skill-header{
     padding-top: 8px;
   }
-  p.skill-description{
-    font-size: 0.95rem;
-  }
 }
 
 @media only screen and (max-width: 1012px){
-  p.me-type{
-    font-size: 24px;
-  }
+
+  /* p.me-type{
+    font-size: 45px;
+  } */
+  
 }
 @media only screen and (max-width: 998px){
   .skills{
     margin-top: 0px;
   }
-  .Skills-page-layout{
-    grid-template-rows: 640px 160px;
-  }
-  .single-skill{
-    grid-template-columns: 100px 1fr;
-    grid-template-rows: 70px 150px;
-  }
-
 }
 
 @media only screen and (max-width: 995px){
-  .Projects-page-layout{
-    grid-template-rows: 650px 140px;
-  }
   .project-card{
     margin: 15px 10px 5px 10px;
+  }
+  p.me-type{
+    font-size: 2.2rem;
   }
 }
 @media only screen and (max-width: 979px){
   p.me-type{
-    font-size: 23px;
-    padding-bottom: 10px;
+    font-size: 2.1rem;
   }
   /* ===CONTACT=== */
   .Contact-page-layout{
-    grid-template-columns: 1fr 600px 1fr;
+    grid-template-columns: 1fr 700px 1fr;
   }
-  #home.buttons {
+  .social-icons {
+    text-align: center;
+  }
+  .back-button > button#home{
     margin-left: 70px;
-    margin-right: 71px;
+    margin-right: 70px;
   }
 }
 @media only screen and (max-width: 925px){
-  .Skills-page-layout {
-    grid-template-rows: 665px 160px;
-  }
-  .skills{
-    grid-template-rows: 230px 230px 230px;
-  }
-  .single-skill{
-    grid-template-rows: 60px 100px;
-  }
-
-  /* h2.skill-header{
-    padding-top: 8px;
-  } */
   p.skill-description{
     padding-top: 15px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-align: justify;
   }
 }
 @media only screen and (max-width: 909px){
   p.me-type{
-    font-size: 22px;
     padding-bottom: 10px;
   }
 }
 @media only screen and (max-width: 892px){
   p.me-type{
-    font-size: 21px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 5px;
     text-align: center;
+  }
+  p.skill-description{
+    font-size: 0.75rem;
   }
 }
 
@@ -1261,7 +1398,7 @@ p.func-bracket {
     column-gap: 10px;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 240px 1fr 1fr;
+    grid-template-rows: 50% 50%;
     grid-template-areas:
       "blurb blurb"
       "image button";
@@ -1269,11 +1406,12 @@ p.func-bracket {
   #hugo{
     width: 340px;
     margin-top: 30px;
-    margin-right: 40px;
+    /* margin-right: 40px; */
+    margin-left: 40px;
   }
   p.me-type{
-    font-size: 26px;
     margin-top: 5px;
+    font-size: 2rem;
   }
   .me-text-and-type{
     grid-area: blurb;
@@ -1293,14 +1431,20 @@ p.func-bracket {
   }
   /* ====PROJECT PAGE===== */
   .Projects-page-layout{
-    grid-template-rows: 1fr 100px;
+    grid-template-rows: 1150px 120px;
     column-gap: 10px;
     grid-template-areas:
       "main"
       "buttons";
   }
-  div.project-buttons{
-    position: sticky;
+  div.project-buttons button#contact.buttons{
+    padding: 19px 10px 10px 10px;
+  }
+  div.project-buttons button#skills.buttons{
+    padding: 19px 10px 10px 10px;
+  }
+  div.project-buttons button#me.buttons{
+    padding: 19px 10px 10px 10px;
   }
   .project-card{
     grid-template-columns: 380px 380px;
@@ -1357,8 +1501,13 @@ p.func-bracket {
   .Contact-page-layout{
     grid-template-columns: 1fr 500px 1fr;
   }
-  .social-icons {
-    text-align: center;
+  .contact-form{
+    grid-template-columns: 1fr 500px 1fr;
+    grid-template-rows: 80px 80px 200px 120px;
+  }
+  .back-button > button#home{
+    margin-left: 18px;
+    margin-right: 18px;
   }
   .contact-button {
     grid-area: submit;
@@ -1367,10 +1516,10 @@ p.func-bracket {
     margin-top: 21px;
     margin-bottom: 10px;
 }
-  #home.buttons {
+  /* #home.buttons {
     margin-left: 25px;
     margin-right: 25px;
-}
+  } */
 }
 
 @media only screen and (max-width: 800px){
@@ -1400,8 +1549,8 @@ p.func-bracket {
 
 @media only screen and (max-width: 780px){
   .Projects-page-layout{
-    grid-template-columns: 740px;
-    grid-template-rows: 1fr 100px;
+    grid-template-columns: auto;
+    grid-template-rows: 1000px 120px;
     column-gap: 10px;
     grid-template-areas:
       "main"
@@ -1436,11 +1585,13 @@ p.func-bracket {
   }
   /* ===========SKILLS============= */
   .Skills-page-layout{
-    grid-template-rows: 1120px 120px;
+    grid-template-rows: 1140px 95px;
   }
   .skills {
     display: grid;
-    justify-content: center;
+    /* justify-content: center; */
+    margin-left: 7%;
+    flex-direction: column;
     grid-template-columns: 90%;
     grid-template-rows: repeat(6, 190px);
     grid-template-areas:
@@ -1492,9 +1643,129 @@ p.func-bracket {
   img#vue.skill-image{
     width: 45px;
   }
+  div.skills-buttons{
+    padding: 5px 15px 6px 15px;
+    margin: 5px 25px 17px 25px;
+  }
+  div.skills-buttons > button#projects.buttons,
+  div.skills-buttons > button#me.buttons,
+  div.skills-buttons > button#contact.buttons{
+    padding: 0px 15px 1px 15px;
+    margin: 0px 25px 10px 15px;    
+  }
+  /* ======SKILLS PAGE TRANSITIONS ===== */
+  #card-html.skill-card-enter {
+    transform: translateX(-200%);
+  }
+  #card-html.skill-card-enter-active {
+    transform: translateX(0%);
+    transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  }
+  #card-html.skill-card-exit {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  #card-html.skill-card-exit-active {
+    opacity: 0;
+    transform: translateX(-200%);
+    transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  }
+
+  #card-javascript.skill-card-enter {
+    transform: translateX(-200%);
+  }
+  #card-javascript.skill-card-enter-active {
+    transform: translateX(0%);
+    transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  }
+  #card-javascript.skill-card-exit {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  #card-javascript.skill-card-exit-active {
+    opacity: 0;
+    transform: translateX(-200%);
+    transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  }
+
+  #card-resDes.skill-card-enter {
+    transform: translateX(-200%);
+  }
+  #card-resDes.skill-card-enter-active {
+    transform: translateX(0%);
+    transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  }
+  #card-resDes.skill-card-exit {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  #card-resDes.skill-card-exit-active {
+    opacity: 0;
+    transform: translateX(-200%);
+    transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  }
+
+  #card-css.skill-card-enter {
+    transform: translateX(200%);
+  }
+  #card-css.skill-card-enter-active {
+    transform: translateX(0%);
+    transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  }
+  #card-css.skill-card-exit {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  #card-css.skill-card-exit-active {
+    opacity: 0;
+    transform: translateX(200%);
+    transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  }
+
+  #card-react.skill-card-enter {
+    transform: translateX(200%);
+  }
+  #card-react.skill-card-enter-active {
+    transform: translateX(0%);
+    transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  }
+  #card-react.skill-card-exit {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  #card-react.skill-card-exit-active {
+    opacity: 0;
+    transform: translateX(200%);
+    transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  }
+
+  #card-vue.skill-card-enter {
+    transform: translateX(200%);
+  }
+  #card-vue.skill-card-enter-active {
+    transform: translateX(0%);
+    transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  }
+  #card-vue.skill-card-exit {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  #card-vue.skill-card-exit-active {
+    opacity: 0;
+    transform: translateX(200%);
+    transition: 1000ms cubic-bezier(0.62, -0.46, 0.3, 1.43);
+  }
+  .skills-button-enter {
+    opacity: 0;
+  }
+  .skills-button-enter-active {
+    opacity: 1;
+    transition: opacity 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
 }
 
 @media only screen and (max-width: 748px){
+  
   p.skill-description{
     font-size: 0.95rem;
   }
@@ -1529,7 +1800,7 @@ p.func-bracket {
   /* ====CONTACT=== */
   .Contact-page-layout{
     grid-template-columns: 100%;
-    grid-template-rows: 70px 520px 80px 80px;
+    grid-template-rows: 120px 470px 100px 100px;
     grid-template-areas:
       "header"
       "formBox"
@@ -1537,9 +1808,10 @@ p.func-bracket {
       "media";
   }
   .contact-form{
-    grid-template-columns: 1fr 580px 1fr;
-    grid-template-rows: 80px 80px 250px 90px;
+    grid-template-columns: 1fr 500px 1fr;
+    grid-template-rows: 80px 80px 200px 120px;
   }
+  
   .contact-type-writer{
     padding-top: 15px;
   }
@@ -1569,8 +1841,18 @@ p.func-bracket {
     width: 30px;
     margin-bottom: 5px;
   }
+  .back-button > button#home{
+    margin-left: 85px;
+    margin-right: 85px;
+  }
+  /* ===ME=== */
+  div.me-text-and-type {
+    margin-top: 20px;
+}
 }
 @media only screen and (max-width: 700px){
+
+  /* ===HOMEPAGE=== */
   .type-writer{
     font-size: 22px;
   }
@@ -1592,18 +1874,24 @@ p.func-bracket {
   p.func-bracket{
     font-size: 22px;
   }
+  /* ===ME PAGE=== */
   .Me-page-layout{
     column-gap: 10px;
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 490px 1fr;
+    grid-template-columns: 100%;
+    grid-template-rows: 320px 450px 30%;
     grid-template-areas:
-      "blurb image"
-      "button button";
+      "blurb" 
+      "image"
+      "button";
   }
   #hugo {
-    width: 300px;
-    margin-left: 0px;
+    width: 310px;
+    margin-left: 25%;
+    margin-top: 25px;
+  }
+  p.me-type{
+    font-size: 29px;
   }
   .buttons{
     padding: 9px 15px 7px 15px;
@@ -1622,12 +1910,119 @@ p.func-bracket {
     margin-left: 70px;
     margin-right: 70px;
   }
+  /* ===SKILLS=== */
+  /* div.skills-buttons > button#projects.buttons,
+  div.skills-buttons > button#me.buttons,
+  div.skills-buttons > button#contact.buttons{
+    padding: 5px 15px 1px 15px;
+    margin: 0px 25px 10px 15px;    
+  } */
+  /* ================================= */
+  .Skills-page-layout {
+    grid-template-rows: 820px 130px;
+  }
+  .skills{
+    display: inline;
+  }
+  h2.skill-header{
+    display: none;
+  }
+  .single-skill{
+    grid-template-rows: 175px;
+    display: flex;
+  }
+  img#html.skill-image {
+    width: 70px;
+    height: 70px;
+    margin-top: 5px;
+  }
+  img#css.skill-image {
+    width: 45px;
+    height: 64px;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+  img#javascript.skill-image {
+    width: 70px;
+    height: 70px;
+    margin-top: 0px;
+  }
+  img#react.skill-image {
+    width: 70px;
+    height: 70px;
+    margin-top: 23px;
+  }
+  img#resDes.skill-image {
+    width: 70px;
+    height: 70px;
+    margin-top: 35px;
+  }
+  img#vue.skill-image {
+    width: 70px;
+    height: 70px;
+    padding-top: 0px;
+    margin-top: 20px;
+  }
+  div.skills-buttons > button#projects.buttons,
+  div.skills-buttons > button#me.buttons,
+  div.skills-buttons > button#contact.buttons{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+  }
+  /* =================================== */
+  /* ===CONTACT=== */
+  .back-button > button#home {
+    padding-top: 25px;
+  }
+  button#submit-details{
+    padding-top: 25px;
+  }
+  /* ================================= */
+  .Contact-page-layout {
+    grid-template-rows: 120px 580px 100px 100px;
+  }
+  .contact-form {
+    grid-template-rows: 100px 100px 250px 105px;
+  }
+  h2.project-header{
+    font-size: 32px;
+    margin-top: 14px;
+  }
+  h2.jiffy.function-name{
+    font-size: 1.3rem;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  button#submit-details {
+    padding: 15px 180px 20px 180px;
+    margin: auto;
+  }
+  .back-button > button#home {
+    padding-top: 5px;
+    padding: 10px 60px 10px 60px;
+  }
+  .social-icons{
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 @media only screen and (max-width: 665px){
+  
   #card-resDes p.skill-description,
   #card-react p.skill-description{
     font-size: 0.88rem;
+  }
+  .back-button > button#home {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+@media only screen and (max-width: 657px){
+  #card-resDes h2.skill-header{
+    font-size: 1.6rem;
   }
 }
 
@@ -1638,6 +2033,9 @@ p.func-bracket {
   #home.buttons {
     margin-left: 40px;
     margin-right: 40px;
+  }
+  p.me-type{
+    font-size: 28px;
   }
 }
 @media only screen and (max-width: 624px){
@@ -1652,31 +2050,37 @@ p.func-bracket {
     padding: 0px;
     padding-top: 10px
   }
+  /* ===SKILL=== */
+  .Skills-page-layout{
+    grid-template-rows: 950px 130px;
+  }
+  .single-skill{
+    grid-template-rows:45px auto;
+  }
+  p.skill-description{
+    margin-top: 20px;
+  }
 }
 
 @media only screen and (max-width: 623px){
   .Me-page-layout{
-    column-gap: 10px;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 380px 400px;
-    grid-template-areas:
-      "blurb blurb"
-      "image button";
+    grid-template-rows: 360px 410px 30%;
   }
   #hugo {
-    width: 250px;
-    margin-left: 0px;
+    width: 270px;
+    margin-left: 27%;
   }
-  .buttons {
-    padding: 0px 0px 7px 0px;
-    margin: 0px 15px 0px 0px;
+  div.me-page-buttons.buttons > button#projects.buttons,
+  div.me-page-buttons.buttons > button#skills.buttons,
+  div.me-page-buttons.buttons > button#contact.buttons{
+    padding-top: 20px;
+    flex-grow: 1;
   }
   .me-photo{
     margin-left: 15px;
   }
   p.me-type{
-    font-size: 1.9rem;
+    font-size: 1.85rem;
     padding-bottom: 20px;
   }
   button#projects.buttons.function.me-button-enter-done {
@@ -1702,6 +2106,9 @@ p.func-bracket {
   #card-resDes p.skill-description{
     font-size: 0.84rem;
   }
+  .me-photo{
+    margin-left: 0px;
+  }
 }
 @media only screen and (max-width: 613px){
   #card-resDes h2.skill-header{
@@ -1716,26 +2123,10 @@ p.func-bracket {
   }
 }
 @media only screen and (max-width: 610px){
-  .Me-page-layout{
-    column-gap: 10px;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 400px 400px;
-  }
-  /* ===CONTACTS=== */
-  .Contact-page-layout{
-    grid-template-columns: 580px;
-    grid-template-rows: 70px 520px 80px 80px;
-    font-size: 1.4rem;
-  }
-  .contact-form{
-    grid-template-columns: 1fr 520px 1fr;
-    grid-template-rows: 80px 80px 250px 90px;
-    grid-template-areas:
-      ". nameBox ."
-      ". emailBox ."
-      ". msgBox ."
-      "submit submit submit";
+
+  /* === ME === */
+  p.me-type{
+    font-size: 1.75rem;
   }
 }
 
@@ -1764,8 +2155,13 @@ p.func-bracket {
   #card-javascript p.skill-description{
     font-size: 0.89rem;
   }
+  
 }
 @media only screen and (max-width: 578px){
+  /* === ME === */
+  p.me-type{
+    font-size: 1.7rem;
+  }
   /* ===HOMEPAGE=== */
   .omit{
     display: none;
@@ -1779,7 +2175,6 @@ p.func-bracket {
   }
   p.my-self{
     font-size: 19px;
-    
     margin: 0 auto 4px 0px;
   }
   p.about-me{
@@ -1877,28 +2272,33 @@ p.func-bracket {
   }
   /* ===CONTACT=== */
   .Contact-page-layout{
-    grid-template-columns: 560px;
-    grid-template-rows: 70px 520px 80px 80px;
+    grid-template-columns: auto;
+    grid-template-rows: 120px 690px 90px 120px;
     font-size: 1.3rem;
   }
   .contact-form{
     grid-template-columns: 1fr 480px 1fr;
-    grid-template-rows: 80px 80px 250px 90px;
+    grid-template-rows: 120px 120px 325px 120px;
   }
   input#name, input#email {
-    border-radius: 20px;
-    height: 33px;
-    width: 375px;
-    margin-top: 21px;
+    /* border-radius: 20px; */
+    /* height: 33px; */
+    /* width: 375px; */
+    /* margin-top: 21px; */
     padding-left: 0px;
     padding-top: 1px;
     font-size: 10px;
   }
+  .back-button > button#home {
+    margin-left: 54px;
+    margin-right: 54px;
+  }
 }
 
 @media only screen and (max-width: 567px){
+  
   .Skills-page-layout{
-    grid-template-rows: 1000px 120px;
+    grid-template-rows: 800px 100px;
   }
   .skills{
     grid-template-rows: repeat(6, 170px);
@@ -1911,7 +2311,7 @@ p.func-bracket {
       "sixthRow";
   }
   .single-skill{
-    grid-template-rows:45px 100px;
+    grid-template-rows:45px auto;
   }
   h2.skill-header{
     font-size: 1.75rem;
@@ -1920,27 +2320,36 @@ p.func-bracket {
     font-size: 1.6rem;
   }
   img#css.skill-image {
-    width: 32px;
+    width: 66px;
   }
   img#react.skill-image {
-    width: 55px;
+    width: 65px;
   }
   img#javascript.skill-image{
-    width: 43px;
+    width: 63px;
   }
   img#vue.skill-image {
-    width: 35px;
+    width: 65px;
   }
-  img.skill-image {
-    width: 38px;
+  img#resDes.skill-image{
+    margin-top: 0px;
+    width: 65px;
+  }
+  p.skill-description{
+    margin-top: 0px;
+  }
+  #card-html p.skill-description,
+  #card-css p.skill-description{
+    margin-top: 15px;
+  }
+  /* ===ME=== */
+  #hugo{
+    width: 270px;
+    margin-left: 26%;
   }
 }
 
 @media only screen and (max-width: 556px){
-  .Me-page-layout{
-    grid-template-columns: 270px 270px;
-    grid-template-rows: 410px 380px;
-  }
   .buttons{
     margin-top: 20px;
   }
@@ -1955,7 +2364,10 @@ p.func-bracket {
   }
   /* =========== SKILLS ============ */
   .Skills-page-layout{
-    grid-template-rows: 1020px 220px;
+    grid-template-rows: 990px 220px;
+  }
+  .skills{
+    grid-template-rows: repeat(6, 185px);
   }
   .single-skill{
     grid-template-columns: 120px 1fr;
@@ -1963,41 +2375,39 @@ p.func-bracket {
     grid-template-areas:
       "image description";
   }
+ 
   h2.skill-header{
     display: none;
   }
 
   img#html.skill-image{
-    width: 120px;
+    width: 80px;
   }
   img#css.skill-image {
-    width: 90px;
+    width: 50px;
     padding-left: 20px;
+    margin-top: 20px;
   }
   img#javascript.skill-image{
-    width: 110px;
+    width: 65px;
   }
   img#react.skill-image {
-    width: 110px;
+    width: 80px;
     padding-top: 20px;
     padding-left: 10px;
   }
   img#resDes.skill-image {
-    width: 90px;
+    width: 80px;
     padding-left: 10px;
   }
   img#vue.skill-image {
-    width: 90px;
-    padding-top: 30px;
+    width: 70px;
+    padding-top: 10px;
     padding-left: 20px;
   }
   div.skills-buttons {
     grid-area: buttons;
-    /* display: flex; */
-    /* justify-content: space-evenly; */
     justify-content: space-evenly;
-    padding: 5px 15px 25px 15px;
-    margin: 5px 25px 10px 25px;
     display: flex;
     flex-direction: column;
   }
@@ -2010,16 +2420,18 @@ p.func-bracket {
     padding-top: 10px;
     padding-bottom: 10px;
   }
+  div.skills-buttons > button#projects.buttons, 
+  div.skills-buttons > button#me.buttons, 
+  div.skills-buttons > button#contact.buttons {
+    padding: 10px 15px 1px 15px;
+    margin: 10px 25px 10px 15px;
+}
+  img#resDes.skill-image{
+    padding: 2px;
+    margin: 25px 0px 0px 20px;
+    border-radius: 10px;
+  }
   /* ===CONTACT=== */
-  .Contact-page-layout{
-    grid-template-columns: 500px;
-    grid-template-rows: 70px 480px 70px 80px;
-    font-size: 1.2rem;
-  }
-  .contact-form{
-    grid-template-columns: 1fr 420px 1fr;
-    grid-template-rows: 70px 70px 250px 90px;
-  }
   .contact-type-writer {
     font-size: 30px;
   }
@@ -2033,31 +2445,44 @@ p.func-bracket {
     margin-left: 16px;
     width: 305px;
   }
+  .back-button > button#home {
+    margin-left: 54px;
+    margin-right: 54px;
+  }
 }
 
 @media only screen and (max-width: 538px){
-  .Me-page-layout{
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 410px 370px;
-  }
-  p.me-type{
-    font-size: 1.85rem;
-  }
+  /* p.me-type{
+    font-size: 1.75rem;
+  } */
   /* ===SKILLS==== */
   p.skill-description {
     font-size: 0.92rem;
-}
+  }
+  h1.thanks-text.function{
+    font-size: 1.8rem;
+    padding-top: 30px;
+  }
+  h2.jiffy.function-name{
+    padding: 50px 20px 10px 20px;
+    font-size: 1.5rem;
+  }
+  .Skills-page-layout {
+    grid-template-rows: 1000px 250px;
+  }
+  .skills {
+    grid-template-rows: repeat(6, 192px);
+  }
 }
 
 @media only screen and (max-width: 530px){
+
   .Me-page-layout {
     grid-template-rows: 400px 328px;
   }
   #hugo{
-    width: 237px;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-right: 5px;
+    width: 230px;
+    margin-top: 10px;
   }
   p.me-type{
     font-size: 1.7rem;
@@ -2065,23 +2490,37 @@ p.func-bracket {
   button#projects.buttons.function.me-button-enter-done,
   button#skills.buttons.function.me-button-enter-done,
   button#contact.buttons.function.me-button-enter-done{
-    padding-top: 10px;
-    margin-bottom: 25px;
+    padding-top: 24px;
+    /* margin-bottom: 25px; */
   }
-
+  div.me-page-buttons.buttons > button#projects.buttons,
+  div.me-page-buttons.buttons > button#skills.buttons,
+  div.me-page-buttons.buttons > button#contact.buttons{
+    padding-top: 20px;
+    flex-grow: 0.1;
+  }
+  div.Me-page-layout > div.me-page-buttons.buttons{
+    padding-top: 0px;
+  }
   .buttons{
     font-size: 1.5rem;
     margin-top: 0px;
   }
+  /* ===CONTACT=== */
+  .back-button > button#home {
+    font-size: 1.9rem;
+    margin-left: 28px;
+    margin-right: 28px;
+  }
+  button#submit-details{
+    font-size: 1.9rem;
+  }
   /* ====SKILLS======= */
-  .Skills-page-layout{
-    grid-template-rows: 1050px 90px;
-  }
-  .skills{
-    grid-template-rows: repeat(6, 180px);
-  }
-  .Skills-page-layout{
-    grid-template-rows: 1075px 220px;
+  /* .Skills-page-layout {
+    grid-template-rows: 1260px 220px;
+  } */
+  .skills {
+    grid-template-rows: repeat(6, 210px);
   }
 }
 @media only screen and (max-width: 513px){
@@ -2089,10 +2528,7 @@ p.func-bracket {
     font-size: 0.82rem;
   }
   #hugo {
-    width: 225px;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-right: 0px;
+    margin-top: 10px;
   }
 }
 @media only screen and (max-width: 505px){
@@ -2105,14 +2541,17 @@ p.func-bracket {
   #card-javascript p.skill-description {
     font-size: 0.85rem;
   }
+  #hugo {
+    margin-top: 10px;
+  }
 }
 
 @media only screen and (max-width: 511px){
-  .Me-page-layout{
-    grid-template-rows: 390px 370px;
-  }
   p.me-type{
     font-size: 1.65rem;
+  }
+  #hugo {
+    margin-top: 0px;
   }
 }
 
@@ -2127,6 +2566,16 @@ p.func-bracket {
   }
   p.me-type{
     font-size: 1.65rem;
+  }
+  #hugo {
+    margin-top: 20px;
+  }
+  /* ====SKILLS======= */
+  /* .Skills-page-layout {
+    grid-template-rows: 1380px 220px;
+  } */
+  .skills {
+    grid-template-rows: repeat(6, 230px);
   }
 }
 @media only screen and (max-width: 483px){
@@ -2143,15 +2592,26 @@ p.func-bracket {
     font-size: 0.75rem;
   }
    /* ===CONTACT=== */
-   .Contact-page-layout{
-    grid-template-columns: 470px;
-    grid-template-rows: 70px 510px 70px 80px;
+   /* .Contact-page-layout{
+    grid-template-columns: auto;
+    grid-template-rows: 120px 670px 120px 120px;
     font-size: 1.2rem;
-  }
+  } */
   .contact-form{
     grid-template-columns: 1fr 390px 1fr;
-    grid-template-rows: 86px 86px 250px 85px;
-    }
+    grid-template-rows: 120px 120px 290px 130px;
+  }
+  .back-button > button#home {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  button#submit-details{
+    padding: 15px 100px 20px 100px;
+  }
+
+  textarea#message{
+    margin-top: 15px;
+  }
 
   input#name{
     margin-top: 15px;
@@ -2164,13 +2624,15 @@ p.func-bracket {
     width: 305px;
   }
   #hugo {
-    width: 210px;
-    margin-top: 10px;
+    margin-top: 40px;
   }
 }
 @media only screen and (max-width: 472px){
   p.me-type {
     font-size: 1.6rem;
+  }
+  #hugo {
+    margin-top: 30px;
   }
 }
 @media only screen and (max-width: 460px){
@@ -2225,28 +2687,26 @@ p.func-bracket {
     font-size: 1.55rem;
   }
   /* ====SKILLS======= */
-  .Skills-page-layout{
-    grid-template-rows: 1280px 90px;
-  }
+  /* .Skills-page-layout{
+    grid-template-rows: 1460px 90px;
+  } */
   .skills{
-    grid-template-rows: repeat(6, 200px);
+    grid-template-rows: repeat(6, 230px);
   }
   #card-javascript p.skill-description {
     font-size: 0.8rem;
   }
+  img#resDes.skill-image{
+    margin-top: 45px;
+  }
 }
 
 @media only screen and (max-width: 450px){
-  /* ===CONTACT=== */
-  .Contact-page-layout{
-  grid-template-columns: 440px;
-  grid-template-rows: 70px 540px 70px 80px;
-  font-size: 1.2rem;
-}
-.contact-form{
-  grid-template-columns: 1fr 350px 1fr;
-  grid-template-rows: 100px 100px 250px 90px;
+  .back-button > button#home {
+    margin-left: 20px;
+    margin-right: 20px;
   }
+
   #hugo{
     width: 205px;
   }
@@ -2260,6 +2720,12 @@ p.func-bracket {
   }
   #hugo{
     width: 200px;
+  }
+  button#projects.buttons.function.me-button-enter-done,
+  button#skills.buttons.function.me-button-enter-done,
+  button#contact.buttons.function.me-button-enter-done{
+    padding-top: 25px;
+    /* margin-bottom: 25px; */
   }
   /* === PROJECT ==== */
   .Projects-page-layout{
@@ -2286,7 +2752,7 @@ p.func-bracket {
 }
 @media only screen and (max-width: 435px){
   .Skills-page-layout{
-    grid-template-rows: 1200px 240px;
+    grid-template-rows: 1050px 240px;
   }
   #card-javascript p.skill-description {
     font-size: 0.77rem;
@@ -2307,7 +2773,15 @@ p.func-bracket {
     font-size: 1.5rem;
   }
   #hugo{
-    width: 180px;
+    width: 203px;
+  }
+  h1.thanks-text.function{
+    font-size: 1.7rem;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  h2.jiffy.function-name{
+    font-size: 1.4rem;
   }
 }
 
@@ -2325,6 +2799,13 @@ p.func-bracket {
   #card-html p.skill-description,
   #card-css p.skill-description{
     font-size: 0.75rem;
+  }
+   /* ===SKILL=== */
+   /* .Skills-page-layout {
+    grid-template-rows: 1460px 240px;
+  } */
+  .skills {
+    grid-template-rows: repeat(6, 240px);
   }
 }
 @media only screen and (max-width: 412px){
@@ -2360,12 +2841,16 @@ p.func-bracket {
   }
   /* ===CONTACT=== */
   .Contact-page-layout{
-    grid-template-columns: 400px;
+    grid-template-columns: auto;
+    grid-template-rows: 120px 675px 100px 100px;
     font-size: 1.2rem;
   }
   .contact-form{
-    grid-template-columns: 1fr 290px 1fr;
-    grid-template-rows: 100px 100px 250px 90px;
+    grid-template-columns: 1fr 360px 1fr;
+    grid-template-rows: 100px 100px 350px 90px;
+  }
+  button#submit-details{
+    margin-top: 25px;
   }
   input#name, input#email {
     margin-top: 15px;
@@ -2375,9 +2860,6 @@ p.func-bracket {
 }
 
 @media only screen and (max-width: 405px){
-  .Me-page-layout{
-    grid-template-rows: 388px 320px;
-  }
   .Projects-page-layout{
     grid-template-columns: 390;
     grid-template-rows: 1fr 290px;
@@ -2409,6 +2891,7 @@ p.func-bracket {
   #card-resDes p.skill-description{
     font-size: 0.66rem;
   }
+  
 }
 
 @media only screen and (max-width: 395px){
@@ -2446,18 +2929,22 @@ p.func-bracket {
     margin-left: 0px;
     width: 255px;
   }
+  .back-button > button#home {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
   p.me-type{
     font-size: 1.4rem;
   }
 }
 
 @media only screen and (max-width: 387px){
-  .Me-page-layout{
+  /* .Me-page-layout{
     grid-template-columns: 170px 170px;
-  }
-  .Me-page-layout{
+  } */
+  /* .Me-page-layout{
     grid-template-rows: 388px 266px;
-  }
+  } */
   #card-react p.skill-description{
     font-size: 0.67rem;
   }
@@ -2465,35 +2952,144 @@ p.func-bracket {
     font-size: 0.67rem;
   }
   #hugo{
-    width: 166px;
+    width: 203px;
+    margin-left: 24%;
   }
   p.me-type{
     font-size: 1.4rem;
   }
+  
 }
 
 @media only screen and (max-width: 380px){
-  #hugo {
-    width: 157px;
-  }
-  /* div.me-page-buttons.buttons{
-    margin-left: 24px;
-  } */
-
+  /* ===PROJECTS=== */
   .Projects-page-layout{
-    grid-template-columns: 350;
+    grid-template-columns: auto;
   }
   .project-card{
-    grid-template-columns: 340px;
+    grid-template-columns: 330px;
   }
   p.project-description{
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   #project-card-tonedrum p.project-description{
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+  #walkrunrideclimb.project-videos {
+    width: 300px;
+  }
+  #ocrapp.project-videos {
+    width: 290px;
+    /* margin: auto; */
+  }
+  /* ==CONTACT=== */
+  .Contact-page-layout {
+    grid-template-rows: 120px 725px 100px 100px;
+  }
+  .contact-form {
+    grid-template-rows: 120px 120px 350px 105px;
   }
   h2.project-header{
     font-size: 32px;
     margin-top: 14px;
   }
+  h2.jiffy.function-name{
+    font-size: 1.3rem;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  button#submit-details {
+    display: inline;
+    padding: 15px 70px 20px 70px;
+  }
+  .back-button > button#home {
+    padding-top: 5px;
+    padding: 10px 60px 10px 60px;
+  }
+  .social-icons{
+    display: flex;
+    justify-content: space-around;
+  }
+  /* ===ME=== */
+  #hugo{
+    margin-left: 20%;
+  }
+  /* ===SKILLS=== */
+  .Skills-page-layout {
+    grid-template-rows: 1050px 240px;
+  }
+  .skills{
+    display: inline;
+  }
+  .single-skill{
+    grid-template-rows: 175px;
+    display: flex;
+  }
+  div.Me-page-layout > div.me-page-buttons.buttons{
+    margin-left: 35px;
+  }
+  img#html.skill-image {
+    width: 70px;
+    height: 70px;
+    margin-top: 35px;
+  }
+  img#html.skill-image {
+    width: 70px;
+    height: 70px;
+    margin-top: 35px;
+  }
+  img#css.skill-image {
+    width: 55px;
+    height: 64px;
+    margin-top: 35px;
+    margin-right: 5px;
+  }
+  img#javascript.skill-image {
+    width: 70px;
+    height: 70px;
+    margin-top: 0px;
+  }
+  img#react.skill-image {
+    width: 70px;
+    height: 70px;
+    margin-top: 23px;
+  }
+  img#resDes.skill-image {
+    width: 70px;
+    height: 70px;
+    margin-top: 35px;
+  }
+  img#vue.skill-image {
+    width: 70px;
+    height: 70px;
+    padding-top: 0px;
+    margin-top: 35px;
+  }
+  div.skills-buttons > button#projects.buttons,
+  div.skills-buttons > button#me.buttons,
+  div.skills-buttons > button#contact.buttons{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+  }
 }
+
+@media only screen and (max-width: 368px){
+  /* ===SKILLS=== */
+  .Skills-page-layout {
+    grid-template-rows: 1050px 240px;
+  }
+  .skills {
+    grid-template-rows: repeat(6, 260px);
+  }
+  /* === CONTACT === */
+  .Contact-page-layout{
+    grid-template-columns: auto;
+    font-size: 1.1rem;
+  }
+  .contact-form{
+    grid-template-columns: 1fr 270px 1fr;
+  }
+}
+
